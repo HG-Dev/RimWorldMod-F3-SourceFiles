@@ -16,6 +16,7 @@ namespace HG.FFF
 
         public static void Initialize()
         {
+            Patches.TryAllApparelPatches(HarmonyInstance);
             Patches.TryAllPatchesForSOS2(HarmonyInstance);
         }
     }

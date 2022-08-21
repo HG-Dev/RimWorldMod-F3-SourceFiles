@@ -18,30 +18,48 @@ namespace HG.FFF.Harmony
         public static MethodInfo ModernSpaceSuitMethodInfo;
         public static MethodInfo GoFastMethodInfo;
         public static MethodInfo TwoColorGetColoredVersionMethodInfo;
+        public static MethodInfo GetGraphicApparelRecordMethodInfo;
 
         public static HashSet<int> _cache_mobilityenabled = new HashSet<int>();
 
-        public static void TryAllPatchesForSOS2(HarmonyLib.Harmony harm)
+        public static void TryAllApparelPatches(HarmonyLib.Harmony harm)
         {
-            //Verse.Graphic_Random.GetColoredVersion(Shader, Color, Color)
-            Verse.Log.Message("Try all patches");
-            TwoColorGetColoredVersionMethodInfo = AccessTools.Method("Verse.Graphic_Random:GetColoredVersion", new Type[] { typeof(Shader), typeof(Color), typeof(Color) });
-                                                  //AccessTools.Method("Verse.Graphic_Random.GetColoredVersion", new Type[] { typeof(Shader), typeof(Color), typeof(Color) });
+            TwoColorGetColoredVersionMethodInfo = AccessTools.Method("Verse.Graphic_Random:GetColoredVersion",
+                new Type[] { typeof(Shader), typeof(Color), typeof(Color) });
+
+            var t_ApparelGraphicRecordSetter = typeof(RimWorld.ApparelGraphicRecordGetter);
+
+            GetGraphicApparelRecordMethodInfo = AccessTools.Method(t_ApparelGraphicRecordSetter, "TryGetGraphicApparel",
+                new Type[] { typeof(RimWorld.Apparel), typeof(RimWorld.BodyTypeDef), typeof(RimWorld.ApparelGraphicRecord).MakeByRefType() });
 
             if (TwoColorGetColoredVersionMethodInfo != null)
             {
                 if (null == harm.Patch(TwoColorGetColoredVersionMethodInfo,
-                    prefix: new HarmonyMethod(typeof(Patches), nameof(Patches.ComplexRandomGraphicPrefix))));
-                Verse.Log.Error("<color=grey>[HG]</color> Failed to patch Graphic_Random:GetColoredVersion for two-colored apparel (could be annoying)");
+                    prefix: new HarmonyMethod(typeof(Patches), nameof(Patches.ComplexRandomGraphicPrefix))))
+                    Verse.Log.Error("<color=grey>[HG]</color> Failed to patch Graphic_Random:GetColoredVersion for two-colored apparel.\nYou'll see a harmless error when the game spawns randomized F3 apparel.");
             }
             else
             {
-                Verse.Log.Warning("<color=grey>[HG]</color> Failed to patch Graphic_Random:GetColoredVersion for two-colored apparel (could be annoying)");
+                Verse.Log.Warning("<color=grey>[HG]</color> Failed to patch Graphic_Random:GetColoredVersion for two-colored apparel.\nYou'll see a harmless error when the game spawns randomized F3 apparel.");
             }
 
+            if (GetGraphicApparelRecordMethodInfo != null)
+            {
+                if (null == harm.Patch(GetGraphicApparelRecordMethodInfo,
+                    transpiler: new HarmonyMethod(typeof(Patches), nameof(Patches.TryGetGraphicApparelTranspiler))))
+                    Verse.Log.Error("<color=grey>[HG]</color> Failed to patch ApparelGraphicRecordSetter:TryGetGraphicApparel for two-colored apparel.\nSome visual functionality will be lost.");
+            }
+            else
+            {
+                Verse.Log.Warning("<color=grey>[HG]</color> Failed to patch ApparelGraphicRecordGetter:TryGetGraphicApparel for two-colored apparel.\nSome visual functionality will be lost.");
+            }
+        }
+
+        public static void TryAllPatchesForSOS2(HarmonyLib.Harmony harm)
+        {
             if (Verse.ModLister.HasActiveModWithName("Save Our Ship 2"))
             {
-                Verse.Log.Message("<color=grey>[HG]</color> Performing SOS2 patches");
+                Verse.Log.Message("<color=grey>[HG]</color> SOS2 detected. Performing SOS2 patches");
                 OldSpaceSuitMethodInfo = AccessTools.Method("SaveOurShip2.ShipInteriorMod2:HasSpaceSuitSlow", new Type[] { typeof(Verse.Pawn) });
                 ModernSpaceSuitMethodInfo = AccessTools.Method("SaveOurShip2.ShipInteriorMod2:EVAlevelSlow", new Type[] { typeof(Verse.Pawn) });
                 GoFastMethodInfo = AccessTools.Method("SaveOurShip2.H_SpaceZoomies:GoFast", new Type[] { typeof(Verse.AI.Pawn_PathFollower), typeof(Verse.Pawn) });
@@ -82,7 +100,6 @@ namespace HG.FFF.Harmony
     ILGenerator generator)
         {
             var list = instructions.ToList();
-            //Verse.Log.Message("[HG] Beginning HasSpaceSuitSlowTranspilerMK3");
 
             // Create and initialize mobility assist found flag
             var v_mobilityAssistFound = generator.DeclareLocal(typeof(bool));
@@ -331,9 +348,8 @@ namespace HG.FFF.Harmony
             return list;
         }
 
-        public static bool ComplexRandomGraphicPrefix(Verse.Graphic_Random __instance, Verse.Graphic __result, ref Shader newShader, ref Color newColor, ref Color newColorTwo)
+        public static bool ComplexRandomGraphicPrefix(Verse.Graphic_Random __instance, Shader newShader, Color newColor, Color newColorTwo, Verse.Graphic __result)
         {
-            Verse.Log.Message("Congrats!");
             if (IsComplexCutout(newShader))
             {
                 __result = Verse.GraphicDatabase.Get<Verse.Graphic_Random>(
@@ -346,6 +362,37 @@ namespace HG.FFF.Harmony
                 return false;
             }
             return true;
+        }
+
+        public static IEnumerable<CodeInstruction> TryGetGraphicApparelTranspiler(IEnumerable<CodeInstruction> instructions,
+ILGenerator generator)
+        {
+            var list = instructions.ToList();
+            // Find GraphicDatabase.Get location
+            MethodInfo m_DrawColorTwo = AccessTools.PropertyGetter(typeof(Verse.Thing), "DrawColorTwo");
+
+            MethodInfo m_GraphicDatabaseGetter = AccessTools.Method(typeof(Verse.GraphicDatabase), "Get",
+                new Type[] { typeof(string), typeof(Shader), typeof(Vector2), typeof(Color), typeof(Color) }, new Type[] { typeof(Verse.Graphic_Multi) });
+
+            for (int i = 0; i < list.Count-3; i++)
+            {
+                // Acquire GraphicDatabase:Get sequence
+                if (list[i].operand is MethodInfo originalMethodInfo)
+                {
+                    if (originalMethodInfo.Name == "Get" && originalMethodInfo.DeclaringType.Name == "GraphicDatabase")
+                    {
+                        list[i] = new CodeInstruction(OpCodes.Call, m_GraphicDatabaseGetter);
+                        list.InsertRange(i, new CodeInstruction[]
+                        {
+                            new CodeInstruction(OpCodes.Ldarg_0),
+                            new CodeInstruction(OpCodes.Callvirt, m_DrawColorTwo)
+                        });
+                        break;
+                    }
+                }
+            }
+
+            return list;
         }
         /*
 ILGenerator generator)

@@ -10,26 +10,24 @@ namespace HG.FFF
         {
             get
             {
-                Color stdColor = Color.white;
-
-                if (StyleDef != null && StyleDef.color != default(Color))
+                Color drawColor = Color.white;
+                CompColorable comp = this.GetComp<CompColorable>();
+                if (comp != null && comp.Active)
                 {
-                    stdColor = StyleDef.color;
+                    drawColor = comp.Color;
+                }
+                else if (StyleDef != null && StyleDef.color != default(Color))
+                {
+                    drawColor = StyleDef.color;
                 }
                 else
                 {
-                    CompColorable comp = this.GetComp<CompColorable>();
-                    if (comp != null && comp.Active)
-                        return comp.Color;
+                    return drawColor;
                 }
 
-                if (stdColor != Color.white)
-                {
-                    Color.RGBToHSV(stdColor, out float hue, out float sat, out float value);
-                    stdColor = Color.HSVToRGB(hue, Mathf.Clamp01(sat * 1.2f), value);
-                }
-
-                return stdColor;
+                // Give it a bit more visual interest by increasing saturation
+                Color.RGBToHSV(drawColor, out float hue, out float sat, out float value);
+                return Color.HSVToRGB(hue, Mathf.Clamp01(sat * 1.25f), value);
 		    }
             set
             {
