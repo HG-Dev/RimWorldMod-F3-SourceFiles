@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="FFFApparelNoQualityBase">
+    <defName>FFF_Apparel_MobilityBelt</defName>
+    <label>mobility assist pack</label>
+    <description>A personal propulsion device. It can assist with evasion in close quarters combat, but its fuel-efficient thrusters are most suited to the vacuum of space, where it speeds up EVA movement immensely.</description>
+    <tickerType>Normal</tickerType>
+    <thingCategories Inherit='False'>
+      <li>ApparelUtility</li>
+    </thingCategories>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedBelt</unfinishedThingDef>
+      <researchPrerequisite>TransportPod</researchPrerequisite>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <useIngredientsForColor>false</useIngredientsForColor>
+      <skillRequirements>
+        <Crafting>6</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <costList>
+      <ComponentIndustrial>5</ComponentIndustrial>
+      <Steel>25</Steel>
+      <Plasteel>10</Plasteel>
+    </costList>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/MobilityBelt/MobilityBelt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2.66</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+      </li>
+    </comps>
+    <statBases>
+      <Mass>3</Mass>
+      <WorkToMake>8000</WorkToMake>
+      <Flammability>0.1</Flammability>
+      <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.18</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.15</ArmorRating_Heat>
+      <EquipDelay>6</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MeleeDodgeChance>10</MeleeDodgeChance>
+      <VacuumSpeedMultiplier>4</VacuumSpeedMultiplier>
+      <StaggerDurationFactor MayRequire="Biotech">-1</StaggerDurationFactor>
+    </equippedStatOffsets>
+    <generateAllowChance>0.15</generateAllowChance>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <apparel>
+	    <wornGraphicPath>Things/Pawn/Humanlike/Apparel/MobilityBelt/MobilityBelt</wornGraphicPath>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <careIfDamaged>false</careIfDamaged>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+      <tags>
+        <li>SpacerMilitary</li>
+        <li>EVA</li>
+        <li>Mobility</li>
+      </tags>
+      <wornGraphicData>
+        <renderUtilityAsPack>true</renderUtilityAsPack>
+        <north>
+          <offset>(0.0,-0.25)</offset>
+            <female><offset>(0.0,0.02)</offset> </female>
+            <hulk><offset>(-0.0,-0.1)</offset></hulk>
+            <fat><offset>(-0.0,-0.0)</offset></fat>
+            <thin><offset>(0.0,-0.0)</offset></thin>
+        </north>
+        <south>
+          <offset>(0.0,0.0)</offset>
+            <female><offset>(0.0,-0.02)</offset> </female>
+            <hulk><offset>(-0.0,-0.0)</offset></hulk>
+            <thin><offset>(-0.0,-0.1)</offset></thin>
+        </south>
+        <east>
+          <offset>(-0.1,-0.0)</offset>
+            <hulk><offset>(-0.05,-0.0)</offset></hulk>
+            <fat><offset>(-0.1,-0.0)</offset></fat>
+            <thin><offset>(0.0,-0.0)</offset></thin>
+        </east>
+        <west>
+          <offset>(0.1,-0.0)</offset>
+            <hulk><offset>(0.05,-0.0)</offset></hulk>
+            <fat><offset>(0.1,-0.0)</offset></fat>
+            <thin><offset>(0.0,-0.0)</offset></thin>
+        </west>
+        <male> <scale>(0.75,0.75)</scale></male>
+        <female><scale>(0.75,0.75)</scale></female>
+        <thin><scale>(0.7,0.7)</scale></thin>
+        <hulk><scale>(1.0,1.0)</scale></hulk>
+        <fat> <scale>(1.0,1.0)</scale></fat>
+      </wornGraphicData>
+    </apparel>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WorldObjectDef Name="FedScoutWreckSite" ParentName="StaticWorldObjectBase">
+    <defName>FFF_FedScoutWreckWorldObject</defName>
+    <label>HELLO WORLD</label>
+    <worldObjectClass>Site</worldObjectClass>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconTexture>World/WorldObjects/Expanding/PeaceTalks</expandingIconTexture>
+    <expandingIconPriority>70</expandingIconPriority>
+    <comps>
+      <li Class="WorldObjectCompProperties_Timeout" />
+      <li Class="WorldObjectCompProperties_DefeatAllEnemiesQuest" />
+      <li Class="WorldObjectCompProperties_ItemStashContents" />
+      <li Class="HG.FFF.WorldObjectCompProperties_FedSurvivor" />
+      <li Class="WorldObjectCompProperties_FormCaravan" />
+      <li Class="WorldObjectCompProperties_TimedDetectionRaids" />
+      <li Class="WorldObjectCompProperties_TimedMakeFactionHostile" />
+    </comps>
+    <IncidentTargetTags>
+      <li>Map_Misc</li>
+    </IncidentTargetTags>
+  </WorldObjectDef>
+
+</Defs>

@@ -1,0 +1,71 @@
+  <!--
+  General order:
+  - 10-100:   Underlying grids (Elevation/Fertility/Caves)
+  - 200-300:  Natural terrain gen
+  - 400-500:  Critical large structures (quest locations, settlements, etc.)
+  - 600:      Reserve Gravship area
+  - 700-800:  Non-critical large structures (ruins, etc.) - these must take into account UsedRects
+  - 850:      Player start spot
+  - 900-1200: Non-critical gen (geysers, plants, animals, etc)
+  - 1500:     Fog
+  - 1600+:    Important buildings/features that need to be unfogged
+  - 1700:     Place gravship marker
+-->
+
+<Defs>
+  <SitePartDef>
+    <defName>FFF_FedScoutWreckSite</defName>
+    <label>expedition wreckage</label>
+    <description>Site of a Federation scout ship, possibly hundreds of years old. A survivor here is asking for your help.</description>
+    <workerClass>HG.FFF.SitePartWorker_FedSurvivor</workerClass>
+    <siteTexture>World/WorldObjects/Expanding/Sites/DownedRefugee</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/ItemStash</expandingIconTexture>
+    <forceExitAndRemoveMapCountdownDurationDays>12</forceExitAndRemoveMapCountdownDurationDays>
+    <increasesPopulation>true</increasesPopulation>
+    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+    <tags>
+        <li>FFF_FedScoutWreck</li>
+    </tags>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+  </SitePartDef>
+
+  <!--MapGeneratorDef ParentName="MapCommonBase">
+    <defName>FFF_FedScoutShipWreck</defName>
+    <genSteps>
+      <li>RocksFromGrid</li>
+      <li>RemoveTinyIslands</li>
+      <li>FFF_FedScoutShipGenStep</li>
+      <li>Underground_ScatterRuinsSimple</li>
+      <li MayRequire="Biotech">AncientPollutionJunk</li>
+    </genSteps>
+  </MapGeneratorDef-->
+  
+  <!-- Landed ship -->
+  <GenStepDef>
+    <defName>FFF_FedScoutShipGenStep</defName>
+    <linkWithSite>FFF_FedScoutWreckSite</linkWithSite>
+    <order>450</order>
+    <genStep Class="GenStep_EscapeShip"><!--GenStep_FedScoutWreck-->
+      <count>1</count>
+      <nearMapCenter>false</nearMapCenter>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>FFF_FedSurvivor</defName>
+    <linkWithSite>FFF_FedScoutWreckSite</linkWithSite>
+    <order>1600</order>
+    <genStep Class="HG.FFF.GenStep_FedSurvivor"><!--"GenStep_DownedRefugee"-->
+      <count>1</count>
+      <nearMapCenter>true</nearMapCenter>
+    </genStep>
+  </GenStepDef>
+
+  <!--LayoutDef>
+    <defName>FFF_FedScoutShipLayout</defName>
+    <workerClass>LayoutWorker_SingleRoom</workerClass>
+    <shouldDamage>true</shouldDamage>
+  </LayoutDef-->
+</Defs>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <!-- Uncolored, base class. -->
+  <ThingDef Name="FFFApparelNoQualityBase" ParentName="ApparelNoQualityBase" Abstract="True">
+    <thingClass>Apparel</thingClass>
+    <thingCategories>
+      <li>FFF_Hypermesh</li>
+    </thingCategories>
+    <techLevel>Spacer</techLevel>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.2</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <stealable>true</stealable>
+    <tradeability>Sellable</tradeability>
+  </ThingDef>
+
+  <!-- Unlike ApparelMakeableBase, this class does not touch the defaultIngredientFilter property. -->
+  <ThingDef Name="FFFApparelMakeableBase" ParentName="FFFApparelNoQualityBase" Abstract="True">
+    <comps>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Styleable"></li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef Name="FFFApparelSealedBody" ParentName="FFFApparelMakeableBase" Abstract="True">
+    <equippedStatOffsets>
+	    <ToxicResistance>0.2</ToxicResistance>
+      <ToxicEnvironmentResistance>0.5</ToxicEnvironmentResistance>
+      <HygieneRateMultiplier MayRequire="dubwise.dubsbadhygiene">-0.3</HygieneRateMultiplier>
+      <DecompressionResistance>0.75</DecompressionResistance>
+    </equippedStatOffsets>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Hypermesh apparel -->
+    <ThingCategoryDef>
+      <defName>FFF_Hypermesh</defName>
+      <label>Hypermesh</label>
+      <parent>Apparel</parent>
+	  </ThingCategoryDef>
+</Defs>

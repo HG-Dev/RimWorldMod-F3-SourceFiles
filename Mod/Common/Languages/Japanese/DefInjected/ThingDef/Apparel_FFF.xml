@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FFF_Hypermesh_Suit.label>プロトスーツ</FFF_Hypermesh_Suit.label>
+  <FFF_Hypermesh_Suit.description>工作台で製造されたスーツのテンプレート. このままでも効率的で衛生的な服装として宇宙船の下級職員や研究者にはいい装備だが, 宇宙服として使うための部品はまだ組まれておらず, 生はハイパーメッシュを隠す表面もなく, ポケットでさえありません. ハイパーメッシュはユーザーに合わせて自動的に変形するため, 子供も利用できます。</FFF_Hypermesh_Suit.description>
+
+  <FFF_Child_Hypermesh_Suit.label>子供用プロトスーツ</FFF_Child_Hypermesh_Suit.label>
+  <FFF_Child_Hypermesh_Suit.description>工作台で製造されたジャンプスーツ. 成長期のお子様に合った量のハイパーメッシュしか利用されていないため, 通常版に比べてお得である.</FFF_Child_Hypermesh_Suit.description>
+
+  <FFF_SealedProtosuit.label>密閉プロトスーツ</FFF_SealedProtosuit.label>
+  <FFF_SealedProtosuit.description>EVA用に調整したプロトスーツ. 短期的な船外活動のための生命維持システムが組まれています.</FFF_SealedProtosuit.description>
+
+  <FFF_RegalSuit.label>礼装スーツ</FFF_RegalSuit.label>
+  <FFF_RegalSuit.description>外交任務用に設計された汎用性の高いジャンプスーツ. 短期的な船外活動のための生命維持システムが組まれています.</FFF_RegalSuit.description>
+
+  <FFF_PilotSuit.label>パイロットスーツ</FFF_PilotSuit.label>
+  <FFF_PilotSuit.description>戦闘用に設計された頑丈で打撃に強いジャンプスーツ. 短期的な船外活動のための生命維持システムが組まれています.</FFF_PilotSuit.description>
+
+  <FFF_CrewSuit.label>クルースーツ</FFF_CrewSuit.label>
+  <FFF_CrewSuit.description>クラシックなデザインを取り入れた汎用性の高いジャンプスーツ. 短期的な船外活動のための生命維持システムが組まれています.</FFF_CrewSuit.description>
+
+  <FFF_Apparel_MobilityBelt.label>モビリティパック</FFF_Apparel_MobilityBelt.label>
+  <FFF_Apparel_MobilityBelt.description>個人用の推進装置. 低燃費のスラスターは陸上では近接戦闘時の回避能力を高める程度だが, 宇宙空間での移動を飛躍的に高めます.</FFF_Apparel_MobilityBelt.description>
+
+</LanguageData>

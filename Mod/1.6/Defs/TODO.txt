@@ -1,0 +1,165 @@
+Rerun WinMerge
+Investigate Graphic_Multi_BuildingWorking
+Investigate CompAttachPoints as a potential method of spawning light motes and maybe even graphic overlays?
+https://github.com/bbradson/Adaptive-Storage-Framework/blob/main/Source/AdaptiveStorage/StorageRenderer.cs
+AdaptiveStorage shows that a newer version of C# can be used.
+
+Quest beginning
+1. Copy TraderCaravanArrival and use custom worker class
+2. 
+
+QuestNode_GenerateWorldObject as a potential method of spawning in ship (and map?!)
+    look up EscapeSHip
+
+
+Faradyl fluid: superconductive refridgerant, turns into a gas in low pressure, easily ionized, use with SOS2 ion engines
+
+    <defName>Util_GenerateSite</defName>
+    <root Class="QuestNode_GenerateSite">
+      <sitePartsParams>$sitePartsParams</sitePartsParams>
+      <hiddenSitePartsPossible>$hiddenSitePartsPossible</hiddenSitePartsPossible>
+      <storeAs>site</storeAs>
+      <faction>$siteFaction</faction>
+      <tile>$siteTile</tile>
+      <singleSitePartRules>
+        <rulesStrings>
+          <li>root(priority=1,sitePart==ClimateAdjuster)->there's (*Threat)a climate adjuster machine(/Threat) there shifting the regional temperature by [temperatureOffset]</li>
+          <li>root(priority=1,sitePart==PsychicDroner)->there's (*Threat)a psychic droner machine(/Threat) there tuned to the [affectedGender] gender</li>
+          <li>root(priority=1,sitePart==PsychicSuppressor)->there's (*Threat)a psychic suppressor machine(/Threat) there tuned to the [affectedGender] gender</li>
+          <li>root(priority=1,sitePart==WeatherController)->there's (*Threat)a weather controller machine(/Threat) there forcing weather in the whole region to [weather_label]</li>
+          <li>root(priority=1,sitePart==SmokeSpewer)->there's (*Threat)a smoke spewer machine(/Threat) there belching smoke over the whole region</li>
+          <li>root(priority=1,sitePart==SunBlocker)->there's (*Threat)a sun blocker machine(/Threat) there shadowing the whole region</li>
+          <li>root(priority=1,sitePart==EMIDynamo)->there's (*Threat)an EMI dynamo machine(/Threat) there which can disable electrical devices across the region</li>
+          <li>root(priority=1,sitePart==ToxicSpewer)->there's (*Threat)a toxic spewer machine(/Threat) there blanketing the whole region in poison</li>
+          <li>root(priority=1,sitePart==RaidSource)->there's a military staging area guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat) that will launch raids on you every [mtbDays]</li>
+          <li>root(priority=1,sitePart==Outpost)->there's an enemy outpost at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</li>
+          <li>root(priority=1,sitePart==BanditCamp)->there's a bandit camp at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</li>
+          <li>root(priority=1,sitePart==Manhunters,count==1)->(*Threat)a manhunting [kindLabel](/Threat) is wandering nearby</li>
+          <li>root(priority=1,sitePart==Manhunters,count>1)->(*Threat)[count] manhunting [kindLabel](/Threat) are wandering nearby</li>
+          <li>root(priority=1,sitePart==SleepingMechanoids,count==1)->(*Threat)a mechanoid(/Threat) is sleeping nearby</li>
+          <li>root(priority=1,sitePart==SleepingMechanoids,count>1)->(*Threat)[count] mechanoids(/Threat) are sleeping nearby</li>
+          <li>root(priority=1,sitePart==Turrets)->(*Threat)[threatsInfo](/Threat) defend the site</li>
+          <li>root(priority=1,sitePart==AmbushEdge)->(*Threat)an enemy force(/Threat) is waiting to ambush anyone who comes near</li>
+          <li>root(priority=1,sitePart==AmbushHidden)->(*Threat)an enemy force(/Threat) is waiting to ambush anyone who comes near</li>
+          <li>root(priority=1,sitePart==MechCluster)->there's (*Threat)a cluster of hostile mechanoid structures(/Threat)</li>
+          <li>root(priority=1,sitePart==PossibleUnknownThreatMarker)->there may be an (*Threat)unknown threat(/Threat)</li>
+          <li>root->there's a [label]</li>
+        </rulesStrings>
+      </singleSitePartRules>
+    </root>
+  </QuestScriptDef>
+</Defs>
+
+
+  <FactionDef ParentName="AncientsBase">
+    <defName>Ancients</defName>
+    <label>neutral ancients</label>
+  </FactionDef>
+
+    <!--
+  <QuestScriptDef>
+    < Automatically created when a LordJob_TradeWithColony is found on the player map >
+    <defName>FFF_OpportunitySite_FedScoutWreck</defName>
+    <randomlySelectable>false</randomlySelectable>
+    <autoAccept>true</autoAccept>
+    <endOnColonyMove>false</endOnColonyMove>
+    <givenBy><li>Traders</li></givenBy>
+    <layerWhitelist><li>Surface</li></layerWhitelist>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[ageAdj] scout ship [wreck]</li>
+
+        <li>ageAdj->secret</li>
+        <li>ageAdj->ancient</li>
+        <li>ageAdj->old</li>
+        <li>ageAdj->hidden</li>
+
+        <li>wreck->wreck</li>
+        <li>wreck->wreckage</li>
+        <li>wreck->crash site</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+		<li>questDescription->[highSocial_nameDef] [heard] [tales] of a crashed Federation scout ship from members of a recent trade caravan. Were you to trek out to the location they described, you may find vacuum-safe uniforms made of processed hyperweave. However, you're just as likely to find looters who are unwilling to share in the plunder.\n\n[federationInfo]</li>
+
+        <li>heard->heard</li>
+        <li>heard->overheard</li>
+
+        <li>tales->tales</li>
+        <li>tales->whispers</li>
+        <li>tales->rumors</li>
+
+        <li>federationInfo->(*Gray)The distant "federation" protects some of the oldest and most wealthy of human colonies, and are well outfitted.
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+          <parms>
+            <pointsFactorTwoStar>1.5</pointsFactorTwoStar>
+            <pointsFactorThreeStar>2</pointsFactorThreeStar>
+          </parms>
+        </li>
+        <li Class="QuestNode_GetMap" />
+
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+        </li>
+
+		    <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>
+            <li>
+              <tag>FFFLoot</tag>
+            </li>
+          </sitePartsTags>
+        </li>
+
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$siteFaction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+          </parms>
+        </li>
+        
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+        </li>
+
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelQuestExpired">Quest expired: [resolvedQuestName]</label>
+                <text TKey="LetterTextQuestExpired">Radio chatter indicates someone indeed found valuable hypermesh at the crash location, and that nothing of value was left. The quest [resolvedQuestName] has expired.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <li Class="QuestNode_NoWorldObject">
+          <worldObject>$site</worldObject>
+          <node Class="QuestNode_End">
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+  -->

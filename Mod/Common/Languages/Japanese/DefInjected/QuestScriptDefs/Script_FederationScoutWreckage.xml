@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+    <FFF_OpportunitySite_FedScoutWreckSurvivor.questNameRules.rulesStrings>
+        <li>questName->[survivor_nameDef]少尉を助ける</li>
+        <li>questName->連邦の生存者 [survivor_nameDef]</li>
+        <li>questName->[survivor_nameDef]の救出</li>
+        <li>questName->[survivor_nameDef]の粗野な目覚め</li>
+    </FFF_OpportunitySite_FedScoutWreckSurvivor.questNameRules.rulesStrings>
+    <FFF_OpportunitySite_FedScoutWreckSurvivor.questDescriptionRules.rulesStrings>
+        <li>questDescription->[survivor_nameDef]が助けを求めています.[survivor_pronoun]は先日怪我をしていて動けません.\n\n[survivor_nameDef]は[survivor_age]歳の[survivor_title]です.もし[survivor_objective]助けてくれれば,[survivor_pronoun]はあなたに加わると約束しています.\n\nまた,[survivor_nameDef]からの話によると,[allSitePartsDescriptionsExceptFirst][pawnInvolvedInQuestInfo]</li>
+        <li>pawnInvolvedInQuestInfo(priority=1)->[survivor_pawnInvolvedInQuestInfo]</li>
+        <li>pawnInvolvedInQuestInfo-></li>
+        <li>federationInfo->(*Gray)「連邦」とは、この惑星のようなリムワールドから遠く、人類のもっとも裕福なコロニーを守る勢力である。</li>
+    </FFF_OpportunitySite_FedScoutWreckSurvivor.questDescriptionRules.rulesStrings>
+
+    <FFF_OpportunitySite_FedScoutWreckSurvivor.LetterLabelQuestExpired>クエスト期限切れ: [resolvedQuestName]</FFF_OpportunitySite_FedScoutWreckSurvivor.LetterLabelQuestExpired>
+    <FFF_OpportunitySite_FedScoutWreckSurvivor.LetterTextQuestExpired>[survivor_nameDef]のシグナルが消え,もう[survivor_pronoun]を救うことができなくなりました.クエストは期限が切れました.</FFF_OpportunitySite_FedScoutWreckSurvivor.LetterTextQuestExpired>
+
+</LanguageData>

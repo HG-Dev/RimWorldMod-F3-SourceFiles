@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FFF.CannotUnloadReason>Cannot unload: {0}</FFF.CannotUnloadReason>
+  <FFF.PrintingInProgressLower>printing in progress</FFF.PrintingInProgressLower>
+  <!--FFF.BatchIncompleteLower>batch of {0} incomplete</FFF.BatchIncompleteLower-->
+  <FFF.ToggleUnloading>toggle unloading</FFF.ToggleUnloading>
+  <FFF.ToggleUnloadingDesc>Enable or disable unloading products from this printer</FFF.ToggleUnloadingDesc>
+  <FFF.EjectContents>eject contents</FFF.EjectContents>
+  <FFF.EjectContentsDesc>Place contents of printer nearby</FFF.EjectContentsDesc>
+
+</LanguageData>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>F3: Spacer Jumpsuits and More</name>
+	<author>ハグ</author>
+	<supportedVersions>
+		<li>1.3</li>
+		<li>1.4</li>
+		<li>1.5</li>
+		<li>1.6</li>
+	</supportedVersions>
+	<packageId>HG.Originals.F3</packageId>
+	<modVersion>2.0.2</modVersion>
+	<description>
+Brave the elements in style, even the vacuum of space!
+This mod adds a series of jumpsuits made from hypermesh: hyperweave treated to enhance its electrostrictive properties such that it can become airtight and insulatory when exposed to harsh conditions.
+
+Dress like a cruiser captain, a hotshot pilot, or space station lab staff, and rest assured in the knowledge that hypermesh suits DO NOT become malodorous with continuous wear, unlike previous-generation synthread jumpsuits.
+Why cram yourself into tens of kilograms of plasteel when lightweight hypermesh can deliver similar* performance**?
+Now that's Functional Future Fashion™!
+
+Artwork by Toriyoshi
+	</description>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>kentington.saveourship2</li>
+		<li>brrainz.harmony</li>
+	</loadAfter>
+	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=2776936670</url>
+</ModMetaData>

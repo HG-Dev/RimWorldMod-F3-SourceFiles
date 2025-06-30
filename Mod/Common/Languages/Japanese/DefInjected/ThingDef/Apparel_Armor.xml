@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FFF_RegalFlak.label>礼装防弾チョッキ</FFF_RegalFlak.label>
+  <FFF_RegalFlak.description>士官に支給される重い防弾チョッキ. 船外活動用の生命維持システムの援助もします.</FFF_RegalFlak.description>
+
+  <Apparel_FFF_HeavyEvaSuitChild.label>子供用EVAパワーアーマー</Apparel_FFF_HeavyEvaSuitChild.label>
+  <Apparel_FFF_HeavyEvaSuitChild.description>ハイパーメッシュ技術に無関ないものの、F3の研究データにはこの子供用の宇宙服の設計も含まれている. 恐ろしいことに, このレベルの防御力は戦闘シナリオを想定している模様. 宇宙空間を移動できる小型スラスターが付いています.</Apparel_FFF_HeavyEvaSuitChild.description>
+
+　<Apparel_FFF_HeavyEvaHelmetChild.label>子供用EVAパワーヘルメット</Apparel_FFF_HeavyEvaHelmetChild.label>
+  <Apparel_FFF_HeavyEvaHelmetChild.description>子供用EVAパワーアーマーと使うヘルメット. 仕様書には 「PLSSカーバーは危険な状況に置かれた子供を慰めるため不可欠である」 と書かれており, やはりおっかない. 酸素のリサイクルと有毒ガスに対する耐性を提供します.</Apparel_FFF_HeavyEvaHelmetChild.description>
+
+</LanguageData>

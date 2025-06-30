@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WorkGiverDef>
+    <defName>UnloadHypermeshPrinter</defName>
+    <label>Unload printer</label>
+    <giverClass>HG.FFF.WorkGiver_UnloadHypermeshPrinter</giverClass>
+    <workType>Hauling</workType>
+    <verb>unload</verb>
+    <gerund>unloading</gerund>
+    <priorityInType>145</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+</Defs>

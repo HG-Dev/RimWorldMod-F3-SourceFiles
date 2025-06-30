@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <HypermeshPrinter.label>HM印刷機</HypermeshPrinter.label>
+  <!--A standalone device installed on Federation starships to print out hypermesh protosuits. Scavengers will often value the reels of hyperweave stored inside these machines above the machines themselves.
+  \n\nKeeping these units from breaking down quickly becomes a war of attrition, 
+  as the megacorp responsible for their manufacture abused a loophole in industrial component standardization laws to boost their afterservice profits.-->
+  <HypermeshPrinter.description>ハイパーメッシュ・プロトスーツを作るために連邦の宇宙船に設置された装置。スカベンジャーはその本体よりも中に入っている貴重なハイパーメッシュを重んじる。\n\nこの装置の製造業者は整備はアフターサービスの利益を上げることを目論んで工業用コンポーネントの標準化法律の抜け穴を利用した結果、装置を使えば使うほどすぐに整備に苦労してしまう。</HypermeshPrinter.description>
+
+</LanguageData>

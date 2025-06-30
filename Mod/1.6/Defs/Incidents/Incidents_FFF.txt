@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<!--IncidentDef>
+		<defName>FFF_FedScoutWreckIncident</defName>
+		<label>Rumored ship wreck</label>
+        <workerClass>HG.FFF.IncidentWorker_StartFedScoutWreckQuest</workerClass>
+		<category>GiveQuest</category>
+        <questScriptDef>FFF.OpportunitySite_FedScoutWreck</questScriptDef>
+		<targetTags>
+			<li>World</li>
+		</targetTags>
+		<letterLabel>Rumored ship wreck</letterLabel>
+		<letterText>A recent caravan brought rumors of an old crashed Federation scout ship, a potential source of valuable equipment.</letterText>
+		<letterDef>PositiveEvent</letterDef>
+		<minPopulation>4</minPopulation>
+		<chanceFactorByPopulationCurve>
+			<points>
+				<li>(3,0)</li>
+				<li>(8,1)</li>
+			</points>
+		</chanceFactorByPopulationCurve>
+        <ignoreRecentSelectionWeighting>true</ignoreRecentSelectionWeighting>
+	</IncidentDef>
+
+	<IncidentDef ParentName="GiveQuestBase">
+		<defName>FFF_GiveQuest_SaveFedSurvivorGetPrinter</defName>
+		<label>rescue requested</label>
+		<letterLabel>Rescue requested</letterLabel>
+		<questScriptDef>FFF_OpportunitySite_FedScoutWreckSurvivor</questScriptDef>
+		<baseChance>0</baseChance> <!-- given by a special storyteller comp -->
+  	</IncidentDef>-->
+
+
+</Defs>

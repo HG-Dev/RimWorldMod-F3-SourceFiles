@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>    
+<Operation Class="PatchOperationFindMod">
+    <mods>
+        <li>Save Our Ship 2</li>
+    </mods>
+    <!-- Without SOS2, all items and offsets that require it should be deleted. -->
+    <nomatch Class="PatchOperationSequence">
+        <operations>
+
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/ThingDef[defName="Apparel_FFF_HeavyEvaSuitChild" or defName="Apparel_FFF_HeavyEvaHelmetChild" or defName="FFF_Apparel_MobilityBelt"]</xpath>
+            </li>
+
+            <li Class="PatchOperationRemove"><!-- Remove DecompressionResistance from abstract class and sealed protosuit -->
+                <xpath>Defs/ThingDef[@Name="FFFApparelSealedBody" or defName="FFF_SealedProtosuit"]/equippedStatOffsets/DecompressionResistance</xpath>
+            </li>
+
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/ThingDef[defName="FFF_RegalFlak"]/equippedStatOffsets/VacuumSpeedMultiplier</xpath>
+            </li>
+
+        </operations>
+    </nomatch>
+
+    <!-- With SOS2, we still need to confirm that it is the latest version to use newer stat offsets. -->
+    <match Class="PatchOperationConditional">
+        <xpath>/Defs/ThingDef[defName="Apparel_SpaceSuitBody"]/comps/li[compClass="SaveOurShip2.Comp_EVA" or compClass="SaveOurShip2.CompEVA"]</xpath>
+
+        <nomatch Class="PatchOperationSequence"><!-- If the newer EVA comps are not found... -->
+            <operations>
+                <li Class="PatchOperationRemove"><!-- Probably won't have Biotech anyway -->
+                    <xpath>Defs/ThingDef[defName="Apparel_FFF_HeavyEvaSuitChild"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/ThingDef[defName="Apparel_FFF_HeavyEvaHelmetChild"]</xpath>
+                </li>
+                <li Class="PatchOperationRemove"><!-- Remove DecompressionResistance from abstract class and sealed protosuit -->
+                    <xpath>Defs/ThingDef[defName="FFFApparelSealedBody"]/equippedStatOffsets/DecompressionResistance</xpath>
+                </li>
+                <li Class="PatchOperationRemove"><!-- Remove DecompressionResistance from abstract class and sealed protosuit -->
+                    <xpath>Defs/ThingDef[defName="FFF_SealedProtosuit"]/equippedStatOffsets/DecompressionResistance</xpath>
+                </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/ThingDef[defName="FFF_RegalFlak" or defName="FFF_Apparel_MobilityBelt"]/equippedStatOffsets/VacuumSpeedMultiplier</xpath>
+                </li>
+            </operations>
+        </nomatch>
+
+        <match Class="PatchOperationConditional"><!-- If a newer EVA comp is found, use the appropriate version -->
+            <xpath>/Defs/ThingDef[defName="Apparel_SpaceSuitBody"]/comps/li[compClass="SaveOurShip2.Comp_EVA"]</xpath>
+            <match Class="PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="Apparel_FFF_HeavyEvaSuitChild" or defName="Apparel_FFF_HeavyEvaHelmetChild"]/comps/li</xpath>
+                <value>
+                    <li><compClass>SaveOurShip2.Comp_EVA</compClass></li>
+                </value>
+            </match>
+        </match>
+
+    </match>
+</Operation>
+</Patch>

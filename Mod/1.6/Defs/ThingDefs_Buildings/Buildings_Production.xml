@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="BuildingBase">
+        <defName>HypermeshPrinter</defName>
+        <label>hypermesh printer</label>
+        <description>A standalone device installed on Federation starships to print out hypermesh protosuits. Scavengers will often value the reels of hyperweave stored inside these machines above the machines themselves.\n\nKeeping these units from breaking down quickly becomes a war of attrition, as the megacorp responsible for their manufacture abused a loophole in industrial component standardization laws to boost their afterservice profits.</description>
+        <thingClass>HG.FFF.Building_HypermeshPrinter</thingClass>
+        <thingCategories>
+            <li>BuildingsSpecial</li>
+        </thingCategories>
+        <graphicData>
+            <texPath>Things/Building/HypermeshPrinter</texPath>
+            <graphicClass>HG.FFF.Graphic_Multi_Indexed</graphicClass>
+            <drawSize>(1,2)</drawSize>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+        <tickerType>Rare</tickerType>
+        <size>(1,2)</size>
+        <rotatable>true</rotatable>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <pathCost>42</pathCost>
+        <castEdgeShadows>true</castEdgeShadows>
+        <fillPercent>0.5</fillPercent>
+        <defaultPlacingRot>South</defaultPlacingRot>
+        <designationHotKey>Misc4</designationHotKey>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <tradeability>Sellable</tradeability>
+        <tradeTags><li>ExoticBuilding</li></tradeTags>
+        <thingSetMakerTags>
+            <li>RewardStandardCore</li>
+         </thingSetMakerTags>
+        <statBases>
+            <MarketValue>1500</MarketValue>
+            <MaxHitPoints>200</MaxHitPoints>
+            <Mass>10</Mass>
+            <Flammability>0</Flammability>
+        </statBases>
+        <costList>
+            <Uranium>10</Uranium>
+            <Plasteel>50</Plasteel>
+            <Steel>120</Steel>
+            <ComponentSpacer>2</ComponentSpacer>
+        </costList>
+        <building>
+            <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+        </building>
+        <comps>
+            <li Class="CompProperties_Breakdownable"/>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>200</basePowerConsumption>
+                <idlePowerDraw>50</idlePowerDraw>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+            <li Class="CompProperties_Refuelable">
+                <fuelLabel>Hyperweave</fuelLabel>
+                <fuelGizmoLabel>Hyperweave</fuelGizmoLabel>
+                <outOfFuelMessage>Cannot print: not enough hyperweave</outOfFuelMessage>
+                <fuelFilter>
+                    <thingDefs>
+                        <li>Hyperweave</li>
+                    </thingDefs>
+                </fuelFilter>
+                <fuelCapacity>150</fuelCapacity>
+                <initialFuelPercent>1</initialFuelPercent>
+                <autoRefuelPercent>0.334</autoRefuelPercent>
+                <targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
+                <showAllowAutoRefuelToggle>false</showAllowAutoRefuelToggle>
+                <showFuelGizmo>true</showFuelGizmo>
+                <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed> 
+                <fuelIconPath>Things\Item\Resource\Hyperweave_c</fuelIconPath>
+            </li>
+            <li Class="HG.FFF.CompProperties_UnloadableSpawner">
+                <thingToSpawn>FFF_Hypermesh_Suit</thingToSpawn>
+                <spawnIntervalRange>10000~960000</spawnIntervalRange>
+                <spawnSlowdownRange>3~20</spawnSlowdownRange>
+                <maxContained>2</maxContained>
+                <soundWorking>ChemfuelFiredGenerator_Ambience</soundWorking>
+            </li>
+        </comps>
+    </ThingDef>
+</Defs>

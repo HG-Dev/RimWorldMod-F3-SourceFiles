@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FFF_RegalFlak.label>форменный бронежилет</FFF_RegalFlak.label>
+  <FFF_RegalFlak.description>Высокоточно спроекитрованный пуленепробиваемый жилет из пластали и гиперткани, предоставляемый офицерам космических аппаратов. Улучшает действие системы жизнеобеспечения во время внекорабельной деятельности.</FFF_RegalFlak.description>
+
+  <Apparel_FFF_HeavyEvaSuitChild.label>тяжёлый детский скафандр АКС</Apparel_FFF_HeavyEvaSuitChild.label>
+  <Apparel_FFF_HeavyEvaSuitChild.description>Хотя и не связанный с технологией гиперсети, исследовательские данные F3 включают спецификации на детский скафандр АКС со встроенными ускорителями. Тревожно намекает на потенциальные боевые ситуации.</Apparel_FFF_HeavyEvaSuitChild.description>
+
+　<Apparel_FFF_HeavyEvaHelmetChild.label>тяжёлый детский шлем АКС</Apparel_FFF_HeavyEvaHelmetChild.label>
+  <Apparel_FFF_HeavyEvaHelmetChild.description>Шлем, соответствующий детскому "тяжелому" скафандру АКС из файлов F3. Спецификации указывают, что "декоративный чехол системы жизнеобеспечения в форме игрушки-животного важен для успокоения детей в опасных условиях". Рециркулирует кислород и защищает от токсичных аэрозольных частиц.</Apparel_FFF_HeavyEvaHelmetChild.description>
+
+</LanguageData>

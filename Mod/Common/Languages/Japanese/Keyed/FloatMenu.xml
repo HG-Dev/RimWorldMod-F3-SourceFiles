@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FFF.CannotUnloadReason>製品を取り出せない: {0}</FFF.CannotUnloadReason>
+  <FFF.PrintingInProgressLower>印刷中</FFF.PrintingInProgressLower>
+  <!--FFF.BatchIncompleteLower>batch of {0} incomplete</FFF.BatchIncompleteLower-->
+  <FFF.ToggleUnloading>取り出し切替</FFF.ToggleUnloading>
+  <FFF.ToggleUnloadingDesc>製品の取り出し有効化または無効化.</FFF.ToggleUnloadingDesc>
+  <FFF.EjectContents>製品を排出</FFF.EjectContents>
+  <FFF.EjectContentsDesc>印刷機の中の製品を排出する.</FFF.EjectContentsDesc>
+
+</LanguageData>

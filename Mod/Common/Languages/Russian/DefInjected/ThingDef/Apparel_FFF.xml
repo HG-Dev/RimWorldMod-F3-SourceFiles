@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FFF_Hypermesh_Suit.label>гиперсетевой протоскафандр</FFF_Hypermesh_Suit.label>
+  <FFF_Hypermesh_Suit.description>Напечатанный механизмами шаблон для костюма. Хотя он может быть вполне хорошим и гигиеничным выбором для команды низкого ранга или исследовательского персонала, он не включает снаряжение для выхода в открытый космос, покрытия поверх сырой гиперсети или карманов. Способность гиперсети менять форму позволяет ему подстраиваться под фигуру, не очень эффективно в случае крупных людей, но идеально для растущих детей.</FFF_Hypermesh_Suit.description>
+
+  <FFF_Child_Hypermesh_Suit.label>детский протоскафандр</FFF_Child_Hypermesh_Suit.label>
+  <FFF_Child_Hypermesh_Suit.description>Напечатанный механизмами костюм с достаточным количеством гиперсети для роста ребёнка.</FFF_Child_Hypermesh_Suit.description>
+
+  <FFF_SealedProtosuit.label>герметичный протоскафандр</FFF_SealedProtosuit.label>
+  <FFF_SealedProtosuit.description>Гиперсетевой протоскафандр, модифицированный для использования в космосе. Включает ограниченную систему жизнеобеспечения для краткой внекорабельной деятельности.</FFF_SealedProtosuit.description>
+
+  <FFF_RegalSuit.label>парадный скафандр</FFF_RegalSuit.label>
+  <FFF_RegalSuit.description>Многоцелевой костюм, предназначенный для дипломатических миссий. Включает ограниченную систему жизнеобеспечения для краткой внекорабельной деятельности.</FFF_RegalSuit.description>
+
+  <FFF_PilotSuit.label>пилотский скафандр</FFF_PilotSuit.label>
+  <FFF_PilotSuit.description>Крепкий костюм, разработанный для солдат и пилотов космических аппаратов, снабжённый поглощающими ударную силу слоями брони. Включает ограниченную систему жизнеобеспечения для краткой внекорабельной деятельности.</FFF_PilotSuit.description>
+
+  <FFF_CrewSuit.label>форменный скафандр</FFF_CrewSuit.label>
+  <FFF_CrewSuit.description>Многоцелевой костюм с дополнительными слоями ткани, похожий на классическую форму. Снабжается неглубокими карманами и поясом для крепления инструментов. Включает ограниченную систему жизнеобеспечения для краткой внекорабельной деятельности.</FFF_CrewSuit.description>
+
+  <FFF_Apparel_MobilityBelt.label>комплект улучшения мобильности</FFF_Apparel_MobilityBelt.label>
+  <FFF_Apparel_MobilityBelt.description>Личное устройство для создания тяги. Может помогать уклонению в ближнем бою, но его топливоэффективные ускорители больше подходят для космического вакуума и значительного ускорения внекорабельного передвижения.</FFF_Apparel_MobilityBelt.description>
+
+  <FFF_Child_Hypermesh_Suit.label>детский протоскафандр</FFF_Child_Hypermesh_Suit.label>
+  <FFF_Child_Hypermesh_Suit.description>Напечатанный механизмами костюм с достаточным количеством гиперсети для роста ребёнка.</FFF_Child_Hypermesh_Suit.description>
+
+</LanguageData>
