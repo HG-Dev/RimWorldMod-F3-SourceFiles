@@ -1,0 +1,76 @@
+﻿using RimWorld;
+using RimWorld.Planet;
+using System.Collections.Generic;
+using UnityEngine;
+using Verse;
+
+namespace HG.FFF
+{
+    [StaticConstructorOnStartup]
+    internal static class ResourceBank
+    {
+        [DefOf]
+        public static class ThingDefOf
+        {
+            public static ThingDef HypermeshPrinter;
+            public static ThingDef FFF_PilotSuit;
+            public static ThingDef FFF_CrewSuit;
+            public static ThingDef FFF_RegalSuit;
+            public static ThingDef FFF_SealedProtosuit;
+        }
+
+        public static Apparel MakeAppropriateSuitForPawn(Pawn pawn)
+        {
+            // Skill
+            var wardening = pawn.skills.AverageOfRelevantSkillsFor(WorkTypeDefOf.Warden);
+            var research = pawn.skills.AverageOfRelevantSkillsFor(WorkTypeDefOf.Research);
+            var crafting = pawn.skills.AverageOfRelevantSkillsFor(WorkTypeDefOf.Crafting);
+            var construction = pawn.skills.AverageOfRelevantSkillsFor(WorkTypeDefOf.Construction);
+            var hunting = pawn.skills.AverageOfRelevantSkillsFor(WorkTypeDefOf.Hunting);
+            var mining = pawn.skills.AverageOfRelevantSkillsFor(WorkTypeDefOf.Mining);
+            var medical = pawn.skills.AverageOfRelevantSkillsFor(WorkTypeDefOf.Doctor);
+
+            KeyValuePair<ThingDef, float>[] options = new KeyValuePair<ThingDef, float>[4];
+            options[0] = new(ThingDefOf.FFF_RegalSuit, Mathf.Max(wardening, research));
+            options[1] = new(ThingDefOf.FFF_CrewSuit, Mathf.Max(construction, mining));
+            options[2] = new(ThingDefOf.FFF_PilotSuit, Mathf.Max(hunting, crafting));
+            options[3] = new(ThingDefOf.FFF_SealedProtosuit, medical);
+            var best = options.MaxBy(pair => pair.Value).Key;
+
+            return ThingMaker.MakeThing(best) as Apparel;
+        }
+
+        [DefOf]
+        public static class JobDefOf
+        {
+            public static JobDef HaulFromUnloadable;
+        }
+
+        private static readonly NameTriple CreatorName = new("Ian", "Hagu", "Haguewood");
+
+        public static Pawn CreateFederationSurvivor(PlanetTile location)
+        {
+            PawnKindDef pawnKind = PawnKindDefOf.SpaceRefugee;
+            var faction = Find.FactionManager.FirstFactionOfDef(FactionDefOf.Ancients);
+            var request = new PawnGenerationRequest(pawnKind, faction,
+                PawnGenerationContext.NonPlayer, location, forceGenerateNewPawn: true, allowDead: false, allowDowned: true,
+                canGeneratePawnRelations: false, mustBeCapableOfViolence: false, 0, forceAddFreeWarmLayerIfNeeded: true, allowGay: true,
+                allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: false, certainlyBeenInCryptosleep: true,
+                forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, biocodeWeaponChance: 1f,
+                biologicalAgeRange: new FloatRange(20, 50), forceRecruitable: true);
+
+            var creator = !CreatorName.UsedThisGame;
+            if (creator)
+            {
+                request.AllowGay = false;
+                request.FixedGender = Gender.Male;
+            }
+
+            var pawn = PawnGenerator.GeneratePawn(request);
+            if (creator)
+                pawn.Name = CreatorName;
+
+            return pawn;
+        }
+    }
+}

@@ -9,9 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HG.FFF</RootNamespace>
     <AssemblyName>FunctionalFutureFashion</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>9.0</LangVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
@@ -30,6 +32,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>hg-fff-signed.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
@@ -40,17 +48,34 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompUnloadableSpawner.cs" />
+    <Compile Include="CompProperties_UnloadableSpawner.cs" />
+    <Compile Include="FedSurvivorComp.cs" />
     <Compile Include="FunctionalFutureFashion.cs" />
     <Compile Include="ApparelTwoColor.cs" />
+    <Compile Include="GenStep_FedScoutWreck.cs" />
+    <Compile Include="GenStep_FedSurvivor.cs" />
+    <Compile Include="Graphic_Multi_Indexed.cs" />
     <Compile Include="Harmony\Patches.cs" />
+    <Compile Include="Building_HypermeshPrinter.cs" />
+    <Compile Include="IncidentWorker_FedScoutWreck.cs" />
+    <Compile Include="JobDriver_HaulFromUnloadable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceBank.cs" />
+    <Compile Include="Scraps\NotInUsage.cs" />
+    <Compile Include="SitePartWorker_FedSurvivor.cs" />
+    <Compile Include="SketchResolver_FedScoutWreck.cs" />
+    <Compile Include="WorkGiver_TakeHypermeshOutOfPrinter.cs" />
+    <Compile Include="WorldObjectCompProperties_FedSurvivor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="hg-fff-signed.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
