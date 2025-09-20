@@ -1,9 +1,0 @@
-<Defs>
-<!--
-  <SketchResolverDef>
-    <defName>FFF_FedScoutWreck</defName>
-    <isRoot>true</isRoot>
-    <resolver Class="HG.FFF.SketchResolver_FedScoutWreck" />
-  </SketchResolverDef>
--->
-</Defs>

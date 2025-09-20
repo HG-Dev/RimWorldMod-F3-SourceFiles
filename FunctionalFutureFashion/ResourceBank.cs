@@ -1,23 +1,75 @@
-﻿using RimWorld;
+﻿using System;
+using RimWorld;
 using RimWorld.Planet;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
+// ReSharper disable InconsistentNaming
+#pragma warning disable CS0649 // Field is never assigned to, and will always have its default value
 
 namespace HG.FFF
 {
     [StaticConstructorOnStartup]
     internal static class ResourceBank
     {
+        // [DefOf]
+        // public static class PrefabDefOf
+        // {
+        //     public static PrefabDef FFF_FedScoutHideout_SouthwestEntrance;
+        // }
+        //
+        // [DefOf]
+        // public static class WorldObjectDefOf
+        // {
+        //     public static WorldObjectDef FFF_FedScoutWreckSiteWorldObject;
+        // }
+        //
+        // [DefOf]
+        // public static class SitePartDefOf
+        // {
+        //     public static SitePartDef FFF_FedScoutWreckSite;
+        // }
+        
         [DefOf]
         public static class ThingDefOf
         {
+            public static ThingDef Limestone;
             public static ThingDef HypermeshPrinter;
             public static ThingDef FFF_PilotSuit;
             public static ThingDef FFF_CrewSuit;
             public static ThingDef FFF_RegalSuit;
             public static ThingDef FFF_SealedProtosuit;
         }
+
+        // [DefOf]
+        // public static class TerrainDefOf
+        // {
+        //     public static TerrainDef Sandstone_RoughHewn;
+        //     //public static TerrainDef Sandstone_Rough;
+        //     public static TerrainDef Limestone_RoughHewn;
+        //     //public static TerrainDef Limestone_Rough;
+        //     public static TerrainDef Slate_RoughHewn;
+        //     //public static TerrainDef Slate_Rough;
+        //     public static TerrainDef Marble_RoughHewn;
+        //     //public static TerrainDef Marble_Rough;
+        //
+        //     public static TerrainDef RockTerrainFromThingDef(ThingDef thingDef, byte roughnessLevel = 1)
+        //     {
+        //         switch (thingDef.defName)
+        //         {
+        //             case "Limestone" when roughnessLevel is 1:
+        //                 return Limestone_RoughHewn;
+        //             case "Sandstone" when roughnessLevel is 1:
+        //                 return Sandstone_RoughHewn;
+        //             case "Marble" when roughnessLevel is 1:
+        //                 return Marble_RoughHewn;
+        //             case "Slate" when roughnessLevel is 1:
+        //                 return Slate_RoughHewn;
+        //             default:
+        //                 throw new ArgumentOutOfRangeException($"No associated terrain for thingDef <{thingDef.defName}>");
+        //         }
+        //     }
+        // }
 
         public static Apparel MakeAppropriateSuitForPawn(Pawn pawn)
         {
@@ -70,6 +122,8 @@ namespace HG.FFF
             if (creator)
                 pawn.Name = CreatorName;
 
+            pawn.apparel.Wear(MakeAppropriateSuitForPawn(pawn), false);
+            
             return pawn;
         }
     }

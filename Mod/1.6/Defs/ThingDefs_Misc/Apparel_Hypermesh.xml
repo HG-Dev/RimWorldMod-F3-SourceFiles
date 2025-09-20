@@ -273,7 +273,7 @@
     <costList>
       <FFF_Hypermesh_Suit>1</FFF_Hypermesh_Suit>
       <ComponentSpacer>1</ComponentSpacer>
-      <Gold>1</Gold>
+      <Gold>3</Gold>
     </costList>
     <apparel>
       <defaultOutfitTags>
@@ -346,12 +346,13 @@
       <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
       <ArmorRating_Sharp>0.45</ArmorRating_Sharp>
       <ArmorRating_Heat>0.36</ArmorRating_Heat>
-      <StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
+      <WorkSpeedGlobal>0.1</WorkSpeedGlobal>
       <Insulation_Cold>33</Insulation_Cold>
       <Insulation_Heat>20</Insulation_Heat>
       <StuffEffectMultiplierInsulation_Cold>0.1</StuffEffectMultiplierInsulation_Cold>
       <StuffEffectMultiplierInsulation_Heat>0.1</StuffEffectMultiplierInsulation_Heat>
       <EquipDelay>3</EquipDelay>
+      <StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
     </statBases>
     <equippedStatOffsets>
       <SocialImpact>0.1</SocialImpact>
@@ -449,6 +450,7 @@
     </statBases>
     <equippedStatOffsets>
       <CarryingCapacity>-2</CarryingCapacity>
+      <PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.2</PilotingAbility>
     </equippedStatOffsets>
     <stuffCategories>
       <li>Fabric</li>

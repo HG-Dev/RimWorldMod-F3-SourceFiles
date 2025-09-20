@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Biotech</li>
+        </mods>
+        <!-- Without Biotech, all children-related items should be deleted. -->
+        <nomatch Class="PatchOperationSequence">
+            <operations>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/ThingDef[defName="Apparel_FFF_HeavyEvaSuitChild"]</xpath>
+                </li>
+
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/ThingDef[defName="Apparel_FFF_HeavyEvaHelmetChild"]</xpath>
+                </li>
+            </operations>
+        </nomatch>
+
+        <match Class="PatchOperationFindMod">
+            <mods>
+                <li>Odyssey</li>
+            </mods>
+
+            <match Class="PatchOperationReplace"><!-- Use Odyssey research when mod is present -->
+                <xpath>Defs/ThingDef[defName="Apparel_FFF_HeavyEvaSuitChild" or defName="Apparel_FFF_HeavyEvaHelmetChild"]/recipeMaker/researchPrerequisite</xpath>
+                <value>
+                    <researchPrerequisite>OrbitalTech</researchPrerequisite>
+                </value>
+            </match>
+
+            <nomatch Class="PatchOperationFindMod"><!-- Otherwise ensure SOS2 exists -->
+                <mods>
+                    <li>Save Our Ship 2</li>
+                </mods>
+                <nomatch Class="PatchOperationSequence">
+                    <operations>
+                        <li Class="PatchOperationRemove">
+                            <xpath>Defs/ThingDef[defName="Apparel_FFF_HeavyEvaSuitChild"]</xpath>
+                        </li>
+
+                        <li Class="PatchOperationRemove">
+                            <xpath>Defs/ThingDef[defName="Apparel_FFF_HeavyEvaHelmetChild"]</xpath>
+                        </li>
+                    </operations>
+                </nomatch><!-- No SOS2 -->
+            </nomatch><!-- No Odyssey -->
+    </match><!-- Biotech exists -->
+    </Operation>
+</Patch>

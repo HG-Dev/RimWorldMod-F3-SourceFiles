@@ -1,4 +1,6 @@
 ﻿#define VERBOSE
+//#define ENABLE_HARMONY
+#if ENABLE_HARMONY
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -172,7 +174,7 @@ ILGenerator generator)
     }
 
 }
-
+#endif
 // SCRAPS
 //var f_apparelDef = AccessTools.Field(typeof(RimWorld.Apparel), nameof(RimWorld.Apparel.def));
 //var f_apparelProps = AccessTools.Field(typeof(Verse.ThingDef), nameof(Verse.ThingDef.apparel));

@@ -1,4 +1,5 @@
 ﻿//#define SHOW_OLD_STUFF
+#if SHOW_OLD_STUFF
 using HarmonyLib;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,6 @@ using System.Reflection.Emit;
 using System.Reflection;
 using UnityEngine;
 
-#if SHOW_OLD_STUFF
 namespace HG.FFF.Old
 {
     private static class NotInUsage

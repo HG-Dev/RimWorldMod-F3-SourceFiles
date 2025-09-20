@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Patch>    
+<Patch>
 <Operation Class="PatchOperationFindMod">
     <mods>
         <li>Save Our Ship 2</li>
@@ -9,7 +9,7 @@
         <operations>
 
             <li Class="PatchOperationRemove">
-                <xpath>Defs/ThingDef[defName="Apparel_FFF_HeavyEvaSuitChild" or defName="Apparel_FFF_HeavyEvaHelmetChild" or defName="FFF_Apparel_MobilityBelt"]</xpath>
+                <xpath>Defs/ThingDef[defName="FFF_Apparel_MobilityBelt"]</xpath>
             </li>
 
             <li Class="PatchOperationRemove"><!-- Remove DecompressionResistance from abstract class and sealed protosuit -->
@@ -29,12 +29,6 @@
 
         <nomatch Class="PatchOperationSequence"><!-- If the newer EVA comps are not found... -->
             <operations>
-                <li Class="PatchOperationRemove"><!-- Probably won't have Biotech anyway -->
-                    <xpath>Defs/ThingDef[defName="Apparel_FFF_HeavyEvaSuitChild"]</xpath>
-                </li>
-                <li Class="PatchOperationRemove">
-                    <xpath>Defs/ThingDef[defName="Apparel_FFF_HeavyEvaHelmetChild"]</xpath>
-                </li>
                 <li Class="PatchOperationRemove"><!-- Remove DecompressionResistance from abstract class and sealed protosuit -->
                     <xpath>Defs/ThingDef[defName="FFFApparelSealedBody"]/equippedStatOffsets/DecompressionResistance</xpath>
                 </li>

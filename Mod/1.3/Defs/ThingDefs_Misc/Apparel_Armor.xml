@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="FFFApparelMakeableBase">
+    <defName>FFF_RegalFlak</defName>
+    <label>dress flak vest</label>
+    <description>A precision-engineered bulletproof vest of plasteel and hyperweave provided to spacer military officers. Boosts life support capabilities during extravehicular activity.</description>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/RegalFlak/RegalFlak</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+    </graphicData>
+    <thingCategories Inherit='False'>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <recipeMaker>
+      <researchPrerequisite>FlakArmor</researchPrerequisite>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+    </recipeMaker>
+    <stuffCategories>
+        <li>Fabric</li>
+        <li>Leathery</li>
+    </stuffCategories>
+    <costStuffCount>20</costStuffCount>
+    <costList>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <Plasteel>40</Plasteel>
+      <Hyperweave>15</Hyperweave>
+      <Gold>1</Gold>
+    </costList>
+    <thingSetMakerTags>
+      <li>RewardStandardMidFreq</li>
+      <li>RewardStandardQualitySuper</li>
+    </thingSetMakerTags>
+    <statBases>
+      <WorkToMake>10000</WorkToMake>
+      <MaxHitPoints>450</MaxHitPoints>
+      <Mass>6</Mass>
+      <Flammability>0.2</Flammability>
+      <ArmorRating_Blunt>0.63</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.15</ArmorRating_Sharp>
+      <ArmorRating_Heat>0.4</ArmorRating_Heat>
+      <StuffEffectMultiplierArmor>0.2</StuffEffectMultiplierArmor>
+      <Insulation_Cold>33</Insulation_Cold>
+      <Insulation_Heat>5</Insulation_Heat>
+      <EquipDelay>8</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <CarryingCapacity>2.5</CarryingCapacity>
+      <SocialImpact>0.12</SocialImpact>
+      <MoveSpeed>-0.125</MoveSpeed>
+      <JumpRange MayRequire="ludeon.rimworld.royalty">3</JumpRange>
+    </equippedStatOffsets>
+    <generateCommonality>0.2</generateCommonality>
+    <apparel>
+      <bodyPartGroups>
+        <li>Neck</li>
+        <li>Torso</li>
+        <li>Shoulders</li>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/RegalFlak/RegalFlak</wornGraphicPath>
+      <useWornGraphicMask>true</useWornGraphicMask>
+      <layers>
+        <li>Middle</li>
+      </layers>
+      <tags>
+        <li>SpacerMilitary</li>
+        <li>RoyalTier5</li>
+        <li>PrestigeCombatGear</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Anything</li>
+        <li>Soldier</li>
+        <li>Knight</li>
+        <li>Diplomat</li>
+      </defaultOutfitTags>
+      <useDeflectMetalEffect>true</useDeflectMetalEffect>
+    </apparel>
+    <colorGenerator Class="ColorGenerator_White">
+    </colorGenerator>
+  </ThingDef>
+
+</Defs>
