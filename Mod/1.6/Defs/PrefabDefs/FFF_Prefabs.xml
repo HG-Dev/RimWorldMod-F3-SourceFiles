@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <PrefabDef>
+    <defName>HypermeshPrinter_Edge</defName>
+    <edgeOnly>true</edgeOnly>
+    <size>(2,1)</size>
+    <things>
+      <FFF_HypermeshPrinterAncient>
+        <position>(1,0,0)</position>
+        <relativeRotation>Opposite</relativeRotation>
+      </FFF_HypermeshPrinterAncient>
+    </things>
+  </PrefabDef>
+
+</Defs>

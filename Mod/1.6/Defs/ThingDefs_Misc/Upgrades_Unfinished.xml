@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="UnfinishedBase">
+    <defName>FFF_UnfinishedUpgradeStandard</defName>
+    <label>unfinished upgrade</label>
+    <description>An unfinished upgrade.</description>
+    <thingClass>HG.FFF.UnfinishedUpgrade</thingClass>
+    <statBases>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedBelt</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories Inherit="false" />
+  </ThingDef>
+
+<ThingDef ParentName="UnfinishedBase" MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>FFF_UnfinishedUpgradeMechtech</defName>
+    <label>unfinished upgrade</label>
+    <description>An unfinished upgrade.</description>
+    <thingClass>HG.FFF.UnfinishedUpgrade</thingClass>
+    <statBases>
+      <Flammability>0.2</Flammability>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedBasicSubcore</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories Inherit="false" />
+  </ThingDef>
+
+</Defs>

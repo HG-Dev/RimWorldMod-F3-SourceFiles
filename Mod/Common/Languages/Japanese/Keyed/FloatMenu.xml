@@ -2,11 +2,21 @@
 <LanguageData>
 
   <FFF.CannotUnloadReason>製品を取り出せない: {0}</FFF.CannotUnloadReason>
-  <FFF.PrintingInProgressLower>印刷中</FFF.PrintingInProgressLower>
-  <!--FFF.BatchIncompleteLower>batch of {0} incomplete</FFF.BatchIncompleteLower-->
+  <FFF.PrintingInProgressLower>製造中</FFF.PrintingInProgressLower>
   <FFF.ToggleUnloading>取り出し切替</FFF.ToggleUnloading>
-  <FFF.ToggleUnloadingDesc>製品の取り出し有効化または無効化.</FFF.ToggleUnloadingDesc>
+  <FFF.ToggleUnloadingDesc>製品の取り出し有効化または無効化</FFF.ToggleUnloadingDesc>
+  <FFF.QueuePrintJob>製造 +1</FFF.QueuePrintJob>
+  <FFF.ToggleRunIndefinitely>無期限稼働 切替</FFF.ToggleRunIndefinitely>
+  <FFF.ToggleRunIndefinitelyDesc>素材が足りるかぎり製造を続行する</FFF.ToggleRunIndefinitelyDesc>
+  <FFF.Upgrade>アップグレード</FFF.Upgrade>
+  <FFF.UpgradeDesc>製造機の機能を向上させる</FFF.UpgradeDesc>
   <FFF.EjectContents>製品を排出</FFF.EjectContents>
-  <FFF.EjectContentsDesc>印刷機の中の製品を排出する.</FFF.EjectContentsDesc>
+  <FFF.EjectContentsDesc>製造機の中の製品を排出する</FFF.EjectContentsDesc>
+  <FFF.EjectIngredients>素材を排出</FFF.EjectIngredients>
+  <FFF.EjectIngredientsDesc>中に入っている素材を排出する</FFF.EjectIngredientsDesc>
+  <FFF.EjectIngredientsWarning>素材を排出すると, 現在の製造プロセスが中断されます. 続行しますか?</FFF.EjectIngredientsWarning>
+  <FFF.QueueJobFirst>先に製造タスクを追加する必要があります.</FFF.QueueJobFirst>
+  <FFF.SufficientIngredients>素材が十分にあります.</FFF.SufficientIngredients>
+  <FFF.IngredientsScatteredOrInsufficient>素材が不足しています, または遠すぎます.</FFF.IngredientsScatteredOrInsufficient>
 
 </LanguageData>

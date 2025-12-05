@@ -1,4 +1,6 @@
-﻿using RimWorld;
+﻿//#define SHOW_OLD_STUFF
+#if SHOW_OLD_STUFF
+using RimWorld;
 using System.Collections.Generic;
 using Verse;
 using Verse.AI;
@@ -45,7 +47,7 @@ namespace HG.FFF
             Toil toil = ToilMaker.MakeToil("TakeUnloadableProduct");
             toil.initAction = () =>
             {
-                var stacks = Unloadable.EjectContentsNearby();
+                var stacks = Unloadable.EjectProductsNearby();
                 if (stacks.Count < 1)
                     EndJobWith(JobCondition.Incompletable);
 
@@ -72,3 +74,4 @@ namespace HG.FFF
         }
     }
 }
+#endif

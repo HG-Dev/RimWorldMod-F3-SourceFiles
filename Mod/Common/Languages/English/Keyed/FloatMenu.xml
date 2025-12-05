@@ -4,9 +4,20 @@
   <FFF.CannotUnloadReason>Cannot unload: {0}</FFF.CannotUnloadReason>
   <FFF.PrintingInProgressLower>printing in progress</FFF.PrintingInProgressLower>
   <!--FFF.BatchIncompleteLower>batch of {0} incomplete</FFF.BatchIncompleteLower-->
-  <FFF.ToggleUnloading>toggle unloading</FFF.ToggleUnloading>
+  <FFF.ToggleUnloading>Toggle unloading</FFF.ToggleUnloading>
   <FFF.ToggleUnloadingDesc>Enable or disable unloading products from this printer</FFF.ToggleUnloadingDesc>
-  <FFF.EjectContents>eject contents</FFF.EjectContents>
+  <FFF.EjectContents>Eject contents</FFF.EjectContents>
   <FFF.EjectContentsDesc>Place contents of printer nearby</FFF.EjectContentsDesc>
+  <FFF.QueuePrintJob>Queue print job</FFF.QueuePrintJob>
+  <FFF.ToggleRunIndefinitely>Toggle run indefinitely</FFF.ToggleRunIndefinitely>
+  <FFF.ToggleRunIndefinitelyDesc>Continue production as long as there are enough materials</FFF.ToggleRunIndefinitelyDesc>
+  <FFF.Upgrade>Upgrade</FFF.Upgrade>
+  <FFF.UpgradeDesc>Attempt to improve functionality</FFF.UpgradeDesc>
+  <FFF.EjectIngredients>Eject ingredients</FFF.EjectIngredients>
+  <FFF.EjectIngredientsDesc>Eject all ingredients held internally</FFF.EjectIngredientsDesc>
+  <FFF.EjectIngredientsWarning>Ejecting printer ingredients will interrupt the current printing process. Do you want to continue?</FFF.EjectIngredientsWarning>
+  <FFF.QueueJobFirst>You must add a print job first.</FFF.QueueJobFirst>
+  <FFF.SufficientIngredients>There are enough ingredients.</FFF.SufficientIngredients>
+  <FFF.IngredientsScatteredOrInsufficient>Ingredients are either insufficient or too far away.</FFF.IngredientsScatteredOrInsufficient>
 
 </LanguageData>

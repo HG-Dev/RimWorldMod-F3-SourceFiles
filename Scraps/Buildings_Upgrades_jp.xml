@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <!--
+        Upgrade: jury-rig
+        A technician with cursory knowledge of microelectronics may be able to bypass dead restructuring cells and safety controllers to keep this printer active, if only just barely.
+    -->
+    <FFF_HypermeshPrinterUpgradeToJuryRigged.label>アップグレード: 応急処置</FFF_HypermeshPrinterUpgradeToJuryRigged.label>
+    <FFF_HypermeshPrinterUpgradeToJuryRigged.description>マイクロエレクトロニクスの基礎の知識があれば, 技術者は壊れた再構築セルと安全コントローラーをバイパスして, この製造機をかろうじて稼働させ続けることができるかもしれない.</FFF_HypermeshPrinterUpgradeToJuryRigged.description>
+    <!--
+        Upgrade: refurbish
+        With advanced components and knowledge of fabricator construction, a technician may be able to restore this printer to full functionality.
+    -->
+    <FFF_HypermeshPrinterUpgradeToRefurbished.label>アップグレード: 改修</FFF_HypermeshPrinterUpgradeToRefurbished.label>
+    <FFF_HypermeshPrinterUpgradeToRefurbished.description>高度なコンポーネントと製造機の構造に関する知識があれば, 技術者はこの製造機を完全に復元できるかもしれない.</FFF_HypermeshPrinterUpgradeToRefurbished.description>
+    <!--
+        Upgrade: modernize
+        A master technician with access to advanced components and modern fabrication technology may be able to improve this printer beyond its original capabilities.
+    -->
+    <FFF_HypermeshPrinterUpgradeToModernized.label>アップグレード: 近代化</FFF_HypermeshPrinterUpgradeToModernized.label>
+    <FFF_HypermeshPrinterUpgradeToModernized.description>高度なコンポーネントと最新の製造技術を持った匠の技術者なら, この製造機を元の能力を超えて改善できるかもしれない.</FFF_HypermeshPrinterUpgradeToModernized.description>
+    <!--
+        Upgrade: mechtech
+        A master technician may be able to integrate a single nanorestructuring chip into this printer to miraculous effect.
+    -->
+    <FFF_HypermeshPrinterUpgradeToMechanite.label>アップグレード: メクテック</FFF_HypermeshPrinterUpgradeToMechanite.label>
+    <FFF_HypermeshPrinterUpgradeToMechanite.description>匠の技術者なら, この製造機にナノ再構築チップを導入して奇跡的な効果をもたらすことができるかもしれない.</FFF_HypermeshPrinterUpgradeToMechanite.description>
+
+</LanguageData>

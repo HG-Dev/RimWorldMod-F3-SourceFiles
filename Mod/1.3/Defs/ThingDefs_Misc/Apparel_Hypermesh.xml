@@ -23,7 +23,7 @@
       <EquipDelay>3</EquipDelay>
     </statBases>
     <thingSetMakerTags>
-      <li>RewardStandardQualitySuper</li>
+      <li>RewardStandardMidFreq</li>
     </thingSetMakerTags>
     <equippedStatOffsets>
       <CarryingCapacity>-2.5</CarryingCapacity>

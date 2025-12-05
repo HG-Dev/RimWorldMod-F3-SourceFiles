@@ -1,16 +1,15 @@
-﻿using RimWorld;
+﻿//#define SHOW_OLD_STUFF
+#if SHOW_OLD_STUFF
 using System.Collections.Generic;
-using System.Reflection;
 using Verse;
 using Verse.AI;
 
 namespace HG.FFF
 {
-    public class WorkGiver_UnloadHypermeshPrinter : RimWorld.WorkGiver_Scanner
+    public class WorkGiver_UnloadHypermeshPrinterProducts : RimWorld.WorkGiver_Scanner
     {
         public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForDef(ResourceBank.ThingDefOf.HypermeshPrinter);
-
-        // Temporarily disabled while figuring out
+        
         public override bool ShouldSkip(Pawn pawn, bool forced = false)
         {
             foreach (var thing in PotentialWorkThingsGlobal(pawn))
@@ -53,3 +52,4 @@ namespace HG.FFF
         }
     }
 }
+#endif

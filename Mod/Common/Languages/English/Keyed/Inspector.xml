@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FFF.PrintingProgress>Progress: {0} ({1})</FFF.PrintingProgress>
+  <FFF.PrintingProgressJobsQueued>Printing ({0} remaining): {1} ({2})</FFF.PrintingProgressJobsQueued>
+  <FFF.PrintingProgressRunIndefinitely>Printing (no limit): {1}</FFF.PrintingProgressRunIndefinitely>
+  <FFF.PrintingPaused>Printing paused ({0})</FFF.PrintingPaused>
+  <FFF.ProductionState>Processing speed: {1} (units produced: {0})</FFF.ProductionState>
+  <FFF.FilledToCapacity>filled to capacity: max {0}</FFF.FilledToCapacity>
+  <FFF.TimeLeftInspect>Time left: {0}</FFF.TimeLeftInspect>
+  <FFF.NoIngredients>no ingredients</FFF.NoIngredients>
+  <FFF.DownForMaintenance>Under maintenance</FFF.DownForMaintenance>
+  <FFF.Upgrade>Upgrade</FFF.Upgrade>
+  <FFF.UnfinishedUpgrade>Unfinished upgrade ({0})</FFF.UnfinishedUpgrade>
+  <FFF.NoRecipes>Can only be deconstructed.</FFF.NoRecipes>
+  <FFF.Survivor>Survivor</FFF.Survivor>
+
+</LanguageData>

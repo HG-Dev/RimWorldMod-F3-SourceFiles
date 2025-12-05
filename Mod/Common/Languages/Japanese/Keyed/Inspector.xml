@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FFF.PrintingProgress>製造中: {0} ({1})</FFF.PrintingProgress>
+  <FFF.PrintingProgressJobsQueued>製造中 (後{0}): {1} ({2})</FFF.PrintingProgressJobsQueued>
+  <FFF.PrintingProgressRunIndefinitely>製造中 (無制限): {0}</FFF.PrintingProgressRunIndefinitely>
+  <FFF.PrintingPaused>一時停止 ({0})</FFF.PrintingPaused>
+  <FFF.ProductionState>処理速度: {1} (製造した個数: {0})</FFF.ProductionState>
+  <FFF.TimeLeftInspect>残り時間: {0}</FFF.TimeLeftInspect>
+  <FFF.FilledToCapacity>満杯・最大{0}まで</FFF.FilledToCapacity>
+  <FFF.NoIngredients>素材不足</FFF.NoIngredients>
+  <FFF.DownForMaintenance>メンテナンス中</FFF.DownForMaintenance>
+  <FFF.Upgrade>アップグレード</FFF.Upgrade>
+  <FFF.UnfinishedUpgrade>未完成のアップグレード ({0})</FFF.UnfinishedUpgrade>
+  <FFF.NoRecipes>解体しかできません.</FFF.NoRecipes>
+  <FFF.Survivor>生存者</FFF.Survivor>
+
+</LanguageData>

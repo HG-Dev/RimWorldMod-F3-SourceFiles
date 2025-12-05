@@ -1,15 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <WorkGiverDef>
-    <defName>UnloadHypermeshPrinter</defName>
-    <label>Unload printer</label>
-    <giverClass>HG.FFF.WorkGiver_UnloadHypermeshPrinter</giverClass>
+  <!--WorkGiverDef>
+    <defName>LoadHypermeshPrinterIngredients</defName>
+    <label>Load printer ingredients</label>
+    <giverClass>HG.FFF.WorkGiver_LoadHypermeshPrinterIngredients</giverClass>
     <workType>Hauling</workType>
-    <verb>unload</verb>
-    <gerund>unloading</gerund>
+    <verb>load</verb>
+    <gerund>loading</gerund>
     <priorityInType>145</priorityInType>
     <requiredCapacities>
       <li>Manipulation</li>
     </requiredCapacities>
+  </WorkGiverDef-->
+
+  <WorkGiverDef>
+    <defName>FFF_DoHypermeshPrinterBills</defName>
+    <label>print apparel</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Hauling</workType>
+    <priorityInType>100</priorityInType>
+    <fixedBillGiverDefs>
+      <li>FFF_HypermeshPrinterAncient</li>
+      <li>FFF_HypermeshPrinterJuryRigged</li>
+      <li>FFF_HypermeshPrinterRefurbished</li>
+      <li>FFF_HypermeshPrinterModernized</li>
+      <li MayRequire="Ludeon.RimWorld.Biotech">FFF_HypermeshPrinterMechanite</li>
+    </fixedBillGiverDefs>
+    <verb>print at</verb>
+    <gerund>printing at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>FFF_DoHypermeshPrinterUpgrades</defName>
+    <label>upgrade printer</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Crafting</workType>
+    <priorityInType>90</priorityInType>
+    <fixedBillGiverDefs>
+      <li>FFF_HypermeshPrinterDefunct</li>
+      <li>FFF_HypermeshPrinterAncient</li>
+      <li>FFF_HypermeshPrinterJuryRigged</li>
+      <li>FFF_HypermeshPrinterRefurbished</li>
+      <li>FFF_HypermeshPrinterModernized</li>
+    </fixedBillGiverDefs>
+    <verb>upgrade a</verb>
+    <gerund>upgrading a</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
   </WorkGiverDef>
 </Defs>

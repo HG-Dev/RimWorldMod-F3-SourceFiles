@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿#if false
+using RimWorld;
 using Verse;
 
 namespace HG.FFF
@@ -10,20 +11,19 @@ namespace HG.FFF
             this.compClass = typeof(CompUnloadableSpawner);
         }
 
-        public bool showContentsInInspectPane = true;
-        public bool requiresPower = true;
+        public bool hideGizmos = false;
         public ThingDef thingToSpawn;
         public ThingDef thingStuff = null;
-        public IntRange spawnIntervalRange = new IntRange(250, 250);
+        public int thingExtractTicks = 200;
+        public IntRange spawnIntervalRange = new IntRange(250, 2500);
         public int spawnBatchCount = 1;
         public int maxContained = 0;
         public int minBeforeUnload = 1;
         public IntRange spawnSlowdownRange = new IntRange(3, 20);
         public SoundDef soundWorking;
+        public SoundDef soundComplete;
 
         public int MaxContained => maxContained > 0 ? maxContained : thingToSpawn.stackLimit;
-        public bool HasUnloadMinLimit => minBeforeUnload > 1;
-        public bool HasLifetimeSpawnLimit => spawnSlowdownRange.max > 0;
 
         public float CalculateLifetimeSlowdownProgress(int spawnedSoFar)
         {
@@ -35,11 +35,13 @@ namespace HG.FFF
             return (float)origin / spawnSlowdownRange.max;
         }
 
-        public override void ResolveReferences(ThingDef parentDef)
+        public override void ResolveReferences(ThingDef _)
         {
-            base.ResolveReferences(parentDef);
-            if (soundWorking == null) soundWorking = SoundDefOf.Interact_CleanFilth;
+            if (thingToSpawn == null) thingToSpawn = ThingDefOf.ChunkMechanoidSlag;
+            if (soundWorking == null) soundWorking = SoundDefOf.Interact_Sow;
+            if (soundComplete == null) soundComplete = SoundDefOf.CryptosleepCasket_Accept;
         }
 
     }
 }
+#endif

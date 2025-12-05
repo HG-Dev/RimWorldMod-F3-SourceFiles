@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+<Operation Class="PatchOperationSequence">
+<operations>
+    <li Class="PatchOperationFindMod">
+        <mods>
+            <li>Ideology</li>
+        </mods>
+        <!-- If Ideology is active, add HypermeshPrinter_Edge prefab to AncientLab room def -->
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/LayoutRoomDef[defName="AncientLab" or defName="AncientArmory"]/prefabs</xpath>
+            <value>
+                <HypermeshPrinter_Edge>
+                    <countPerTenEdgeCells>6</countPerTenEdgeCells>
+                    <minMaxRange>1~2</minMaxRange>
+                </HypermeshPrinter_Edge>
+            </value>
+        </match>
+    </li>
+    <li Class="PatchOperationFindMod">
+        <mods>
+            <li>Odyssey</li>
+        </mods>
+        <!-- If Odyssey is active, add HypermeshPrinter_Edge prefab to AncientLab room def -->
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/LayoutRoomDef[defName="AncientCryptosleepRoom" or defName="AncientCryptosleepRoom_Hostile" or defName="AncientCryptosleepRoom_Hostile_Deserted"]</xpath>
+            <value>
+                <prefabs>
+                    <HypermeshPrinter_Edge>
+                        <countPerTenEdgeCells>6</countPerTenEdgeCells>
+                        <minMaxRange>1~2</minMaxRange>
+                    </HypermeshPrinter_Edge>
+                </prefabs>
+            </value>
+        </match>
+    </li>
+</operations>
+</Operation>
+</Patch>

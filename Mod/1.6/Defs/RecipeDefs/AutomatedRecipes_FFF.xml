@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RecipeDef>
+    <defName>AutoMake_Protosuit</defName>
+    <label>print protosuit</label>
+    <description>Automatically print a hypermesh protosuit.</description>
+    <jobString>Printing hypermesh protosuit.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <requiredGiverWorkType>Hauling</requiredGiverWorkType>
+    <effectWorking>HackingTerminal</effectWorking>
+    <soundWorking>Interact_Research</soundWorking>
+    <workAmount>24</workAmount>
+    <formingTicks>8000</formingTicks>
+    <descriptionHyperlinks>
+      <ThingDef>FFF_Hypermesh_Suit</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Hyperweave</li>
+          </thingDefs>
+        </filter>
+        <count>70</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Hyperweave</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FFF_Hypermesh_Suit>1</FFF_Hypermesh_Suit>
+    </products>
+    <displayPriority>230</displayPriority>
+  </RecipeDef>
+
+<RecipeDef>
+    <defName>AutoMake_ChildProtosuit</defName>
+    <label>print children's protosuit</label>
+    <description>Automatically print a child-sized protosuit.</description>
+    <jobString>Printing children's protosuit.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <requiredGiverWorkType>Hauling</requiredGiverWorkType>
+    <effectWorking>HackingTerminal</effectWorking>
+    <soundWorking>Interact_Research</soundWorking>
+    <workAmount>24</workAmount>
+    <formingTicks>4000</formingTicks>
+    <descriptionHyperlinks>
+      <ThingDef>FFF_Child_Hypermesh_Suit</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Hyperweave</li>
+          </thingDefs>
+        </filter>
+        <count>20</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Hyperweave</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FFF_Child_Hypermesh_Suit>1</FFF_Child_Hypermesh_Suit>
+    </products>
+    <displayPriority>230</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>AutoCultivate_Protosuit</defName>
+    <label>cultivate protosuit</label>
+    <description>Automatically cultivate a hypermesh protosuit from crude materials, as one might gestate a mechanoid.</description>
+    <jobString>Cultivating hypermesh protosuit.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <requiredGiverWorkType>Hauling</requiredGiverWorkType>
+    <effectWorking>HackingTerminal</effectWorking>
+    <soundWorking>Interact_Research</soundWorking>
+    <workAmount>24</workAmount>
+    <formingTicks>18000</formingTicks>
+    <descriptionHyperlinks>
+      <ThingDef>FFF_Hypermesh_Suit</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>120</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Cloth</li>
+        <li>Plasteel</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FFF_Hypermesh_Suit>1</FFF_Hypermesh_Suit>
+    </products>
+    <displayPriority>200</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>AutoCultivate_ChildProtosuit</defName>
+    <label>cultivate child's protosuit</label>
+    <description>Automatically cultivate a child-sized protosuit from crude materials, as one might gestate a mechanoid.</description>
+    <jobString>Cultivating child-sized hypermesh protosuit.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <requiredGiverWorkType>Hauling</requiredGiverWorkType>
+    <effectWorking>HackingTerminal</effectWorking>
+    <soundWorking>Interact_Research</soundWorking>
+    <workAmount>24</workAmount>
+    <formingTicks>9000</formingTicks>
+    <descriptionHyperlinks>
+      <ThingDef>FFF_Child_Hypermesh_Suit</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Cloth</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Cloth</li>
+        <li>Plasteel</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FFF_Child_Hypermesh_Suit>1</FFF_Child_Hypermesh_Suit>
+    </products>
+    <displayPriority>200</displayPriority>
+  </RecipeDef>
+</Defs>

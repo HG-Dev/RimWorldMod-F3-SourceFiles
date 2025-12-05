@@ -52,7 +52,7 @@
     <equippedStatOffsets>
       <MeleeDodgeChance>10</MeleeDodgeChance>
       <VacuumSpeedMultiplier>4</VacuumSpeedMultiplier>
-      <StaggerDurationFactor MayRequire="Biotech">-1</StaggerDurationFactor>
+      <StaggerDurationFactor MayRequire="Ludeon.RimWorld.Biotech">-1</StaggerDurationFactor>
     </equippedStatOffsets>
     <generateAllowChance>1</generateAllowChance>
     <tradeTags>

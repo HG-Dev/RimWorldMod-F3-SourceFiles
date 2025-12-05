@@ -39,24 +39,40 @@
     <AssemblyOriginatorKeyFile>hg-fff-signed.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\2009463077\1.5\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\ianmeharg\Library\Application Support\Steam\steamapps\common\RimWorld\RimWorldMac.app\Contents\Resources\Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\..\ianmeharg\Library\Application Support\Steam\steamapps\common\RimWorld\RimWorldMac.app\Contents\Resources\Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\..\ianmeharg\Library\Application Support\Steam\steamapps\common\RimWorld\RimWorldMac.app\Contents\Resources\Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompUnloadableSpawner.cs" />
-    <Compile Include="CompProperties_UnloadableSpawner.cs" />
+    <Compile Include="Building_ThingMaker.cs" />
+    <Compile Include="Command_ActionWithLimitedQueue.cs" />
+    <Compile Include="CompProperties_Transformable.cs" />
+    <Compile Include="CompProperties_PostPostMakeLoot.cs" />
+    <Compile Include="CompTransformable.cs" />
+    <Compile Include="CompPostPostMakeLoot.cs" />
     <Compile Include="FedSurvivorComp.cs" />
     <Compile Include="FunctionalFutureFashion.cs" />
     <Compile Include="ApparelTwoColor.cs" />
@@ -64,16 +80,31 @@
     <Compile Include="GenStep_FedSurvivor.cs" />
     <Compile Include="Graphic_Multi_Indexed.cs" />
     <Compile Include="Harmony\Patches.cs" />
-    <Compile Include="Building_HypermeshPrinter.cs" />
     <Compile Include="IncidentWorker_FedScoutWreck.cs" />
-    <Compile Include="JobDriver_HaulFromUnloadable.cs" />
+    <Compile Include="FFF_Extensions.cs" />
+    <Compile Include="ITab_BillsHideForStrangeBills.cs" />
+    <Compile Include="ITab_TransformableRecipeChoices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestNode_FedScoutQuest.cs" />
+    <Compile Include="QuotaState.cs" />
+    <Compile Include="RecipeDefExt.cs" />
+    <Compile Include="RecipeTransformableExtension.cs" />
     <Compile Include="ResourceBank.cs" />
+    <Compile Include="Scraps\Blueprint_Upgrade.cs" />
+    <Compile Include="Scraps\Building_HypermeshPrinter_Old.cs" />
+    <Compile Include="Scraps\Building_Upgrade.cs" />
+    <Compile Include="Scraps\CompProperties_SpawnReplacementBlueprint.cs" />
+    <Compile Include="Scraps\CompProperties_UnloadableSpawner.cs" />
+    <Compile Include="Scraps\CompSpawnReplacementBlueprint.cs" />
+    <Compile Include="Scraps\CompUnloadableSpawner.cs" />
+    <Compile Include="Scraps\JobDriver_HaulFromUnloadable.cs" />
     <Compile Include="Scraps\NotInUsage.cs" />
+    <Compile Include="Scraps\Recipe_BuildingUpgrade.cs" />
+    <Compile Include="Scraps\WorkGiver_LoadHypermeshPrinterIngredients.cs" />
+    <Compile Include="Scraps\WorkGiver_UnloadHypermeshPrinterProducts.cs" />
     <Compile Include="SitePartWorker_FedSurvivor.cs" />
     <Compile Include="SketchResolver_FedScoutWreck.cs" />
-    <Compile Include="WorkGiver_TakeHypermeshOutOfPrinter.cs" />
+    <Compile Include="UnfinishedUpgrade.cs" />
     <Compile Include="WorldObjectCompProperties_FedSurvivor.cs" />
   </ItemGroup>
   <ItemGroup>

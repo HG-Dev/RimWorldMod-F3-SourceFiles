@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="BuildingBase">
+        <defName>HypermeshPrinter</defName>
+        <label>hypermesh printer</label>
+        <description>A standalone device installed on Federation starships to print out hypermesh protosuits. Scavengers will often value the reels of hyperweave stored inside these machines above the machines themselves.\n\nKeeping these units from breaking down quickly becomes a war of attrition, as the megacorp responsible for their manufacture abused a loophole in industrial component standardization laws to boost their afterservice profits.</description>
+        <thingCategories>
+            <li>BuildingsSpecial</li>
+        </thingCategories>
+        <graphicData>
+            <texPath>Things/Building/HypermeshPrinter</texPath>
+            <graphicClass>HG.FFF.Graphic_Multi_Indexed</graphicClass>
+            <drawSize>(1,2)</drawSize>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+        <tickerType>Never</tickerType>
+        <size>(1,2)</size>
+        <rotatable>true</rotatable>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <pathCost>42</pathCost>
+        <castEdgeShadows>true</castEdgeShadows>
+        <fillPercent>0.5</fillPercent>
+        <defaultPlacingRot>South</defaultPlacingRot>
+        <designationHotKey>Misc4</designationHotKey>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <statBases>
+            <MarketValue>1500</MarketValue>
+            <MaxHitPoints>200</MaxHitPoints>
+            <Mass>10</Mass>
+            <Flammability>0</Flammability>
+        </statBases>
+        <costList>
+            <Uranium>10</Uranium>
+            <Plasteel>50</Plasteel>
+            <Steel>120</Steel>
+            <ComponentSpacer>2</ComponentSpacer>
+        </costList>
+        <comps>
+            <li Class="HG.FFF.CompProperties_Transformable">
+                <signalPairs>
+                    <li>
+                        <key>OnInitialize</key>
+                        <value>FFF_HypermeshPrinterAncient</value>
+                    </li>
+                </signalPairs>
+            </li>
+        </comps>
+        <building>
+            <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+        </building>
+        <virtualDefs></virtualDefs>
+        <virtualDefParent>FFF_HypermeshPrinterAnyQuality</virtualDefParent>
+    </ThingDef>
+</Defs>

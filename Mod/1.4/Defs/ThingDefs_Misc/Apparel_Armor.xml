@@ -59,7 +59,7 @@
       <CarryingCapacity>2.5</CarryingCapacity>
       <SocialImpact>0.12</SocialImpact>
       <MoveSpeed>-0.12</MoveSpeed>
-      <JumpRange MayRequire="ludeon.rimworld.royalty">3</JumpRange>
+      <JumpRange MayRequire="Ludeon.RimWorld.Royalty">3</JumpRange>
 	  <VacuumSpeedMultiplier>3</VacuumSpeedMultiplier>
     </equippedStatOffsets>
     <generateCommonality>1</generateCommonality>

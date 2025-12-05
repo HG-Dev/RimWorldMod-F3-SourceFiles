@@ -1,5 +1,5 @@
 ﻿#define VERBOSE
-//#define ENABLE_HARMONY
+#define ENABLE_HARMONY
 #if ENABLE_HARMONY
 using System;
 using System.Collections.Generic;
@@ -15,22 +15,8 @@ namespace HG.FFF.Harmony
 {
     public class Patches
     {
-        public enum VersionOfSOS2
-        {
-            Unknown,
-            //SteamTwoPointFiveOrOlder, retired
-            //ExperimentalPreNineties, retired
-            ExperimentalPostNineties,
-            SteamTwoPointSevenOrNewer
-        }
-
-        public static VersionOfSOS2 Version = VersionOfSOS2.Unknown;
-        public static MethodInfo OldSpaceSuitMethodInfo;
-        public static MethodInfo ModernSpaceSuitMethodInfo;
-        public static MethodInfo GoFastMethodInfo;
         public static MethodInfo TwoColorGetColoredVersionMethodInfo;
         public static MethodInfo GetGraphicApparelRecordMethodInfo;
-
 
         public static void TryAllApparelPatches(HarmonyLib.Harmony harm)
         {
@@ -65,46 +51,6 @@ namespace HG.FFF.Harmony
             else
             {
                 Verse.Log.Warning("<color=grey>[HG]</color> Failed to patch ApparelGraphicRecordGetter:TryGetGraphicApparel for two-colored apparel.\nSome visual functionality will be lost.");
-            }
-        }
-
-        public static void TryAllPatchesForSOS2(HarmonyLib.Harmony harm)
-        {
-            // TEST: Get all shaders
-            if (!Verse.ModLister.HasActiveModWithName("Save Our Ship 2"))
-            {
-                Verse.Log.Message("<color=grey>[HG]</color> <color=#008080FF>Save Our Ship 2</color> not detected.");
-                return;
-            }
-
-            {
-                var sosMod = Verse.ModLister.GetActiveModWithIdentifier("kentington.saveourship2");
-                if (sosMod == null)
-                {
-                    Verse.Log.Message("<color=grey>[HG]</color> <color=#008080FF>Save Our Ship 2</color> metadata not found. If you have both SOS2 and SOS2EXP in the mod list, remove the one you aren't using.");
-                    return;
-                }
-                var authors = sosMod.Authors.Select(s => s.Replace(" ", "")).ToHashSet();
-                if (authors.NullOrEmpty())
-                {
-                    Verse.Log.Message("<color=grey>[HG]</color> <color=#008080FF>Save Our Ship 2</color> author metadata not found.");
-                    return;
-                }
-
-                /*if (authors.Contains("SonicTHI") && !authors.Contains("Owlchemist"))
-                {
-                        Verse.Log.Message("<color=grey>[HG]</color> <color=#008080FF>Save Our Ship 2</color> detected. Movement patches will not be performed.");
-                        if (sosMod.SupportedVersionsReadOnly.Any(v => v.Minor == 3))
-                            Version = VersionOfSOS2.SteamTwoPointSevenOrNewer;
-                        else
-                            Version = VersionOfSOS2.ExperimentalPostNineties;
-                        return;
-                }
-                else
-                {
-                    Verse.Log.Message("<color=grey>[HG]</color> Ancient <color=#008080FF>Save Our Ship 2</color> detected. Support for old SOS2 has ended.");
-                    Version = VersionOfSOS2.Unknown;
-                }*/
             }
         }
 

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Defs>
-  <JobDef>
-    <defName>HaulFromUnloadable</defName>
-    <driverClass>HG.FFF.JobDriver_HaulFromUnloadable</driverClass>
-    <reportString>Unloading product.</reportString>
-  </JobDef>
-</Defs>

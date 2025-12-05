@@ -2,7 +2,7 @@
 <LanguageData>
 
   <FFF_Hypermesh_Suit.label>プロトスーツ</FFF_Hypermesh_Suit.label>
-  <FFF_Hypermesh_Suit.description>工作台で製造されたスーツのテンプレート. このままでも効率的で衛生的な服装として宇宙船の下級職員や研究者にはいい装備だが, 宇宙服として使うための部品はまだ組まれておらず, 生はハイパーメッシュを隠す表面もなく, ポケットでさえありません. ハイパーメッシュはユーザーに合わせて自動的に変形するため, 子供も利用できます。</FFF_Hypermesh_Suit.description>
+  <FFF_Hypermesh_Suit.description>工作台で製造されたスーツのテンプレート. このままでも効率的で衛生的な服装として宇宙船の下級職員や研究者にはいい装備だが, 宇宙服として使うための部品はまだ組まれておらず, 生はハイパーメッシュを隠す表面もなく, ポケットでさえありません. ハイパーメッシュはユーザーに合わせて自動的に変形するため, 子供も利用できます.</FFF_Hypermesh_Suit.description>
 
   <FFF_Child_Hypermesh_Suit.label>子供用プロトスーツ</FFF_Child_Hypermesh_Suit.label>
   <FFF_Child_Hypermesh_Suit.description>工作台で製造されたジャンプスーツ. 成長期のお子様に合った量のハイパーメッシュしか利用されていないため, 通常版に比べてお得である.</FFF_Child_Hypermesh_Suit.description>

@@ -23,7 +23,7 @@
       <EquipDelay>3</EquipDelay>
     </statBases>
     <thingSetMakerTags>
-      <li>RewardStandardQualitySuper</li>
+      <li>RewardStandardMidFreq</li>
     </thingSetMakerTags>
     <equippedStatOffsets>
       <CarryingCapacity>-2</CarryingCapacity>
@@ -36,7 +36,7 @@
       <HygieneRateMultiplier MayRequire="dubwise.dubsbadhygiene">-0.5</HygieneRateMultiplier>
     </equippedStatOffsets>
     <costList>
-      <Hyperweave>64</Hyperweave>
+      <Hyperweave>75</Hyperweave>
       <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
     <apparel>
@@ -105,7 +105,7 @@
       <HygieneRateMultiplier MayRequire="dubwise.dubsbadhygiene">-0.5</HygieneRateMultiplier>
     </equippedStatOffsets>
     <costList>
-      <Hyperweave>18</Hyperweave>
+      <Hyperweave>25</Hyperweave>
       <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
     <apparel>

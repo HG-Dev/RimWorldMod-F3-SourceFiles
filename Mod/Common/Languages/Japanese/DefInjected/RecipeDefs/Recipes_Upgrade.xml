@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <!--
+        Upgrade label: jury-rig
+        Description: Override broken hyperweave restructuring cells and safety controllers to keep the printer running, if only barely.
+        Job string: Jury-rigging printer.
+    -->
+    <FFF_MakeUpgrade_JuryRiggedHypermeshPrinter.label>応急処置</FFF_MakeUpgrade_JuryRiggedHypermeshPrinter.label>
+    <FFF_MakeUpgrade_JuryRiggedHypermeshPrinter.description>壊れたハイパーメッシュ再構築セルと安全コントローラーをオーバーライドして, 製造機をかろうじて稼働させ続ける.</FFF_MakeUpgrade_JuryRiggedHypermeshPrinter.description>
+    <FFF_MakeUpgrade_JuryRiggedHypermeshPrinter.jobString>製造機を応急処置中.</FFF_MakeUpgrade_JuryRiggedHypermeshPrinter.jobString>
+    <!--
+        Upgrade label: refurbish
+        Description: Restore the printer's original functionality using advanced components.
+        Job string: Refurbishing printer.
+    -->
+    <FFF_MakeUpgrade_RefurbishedHypermeshPrinter.label>改修</FFF_MakeUpgrade_RefurbishedHypermeshPrinter.label>
+    <FFF_MakeUpgrade_RefurbishedHypermeshPrinter.description>高度なコンポーネントを使用して, 製造機の元の機能を復元する.</FFF_MakeUpgrade_RefurbishedHypermeshPrinter.description>
+    <FFF_MakeUpgrade_RefurbishedHypermeshPrinter.jobString>製造機を改修中.</FFF_MakeUpgrade_RefurbishedHypermeshPrinter.jobString>
+    <!--
+        Upgrade label: modernize
+        Description: Improve upon the printer's original design using modern fabricator technology and advanced components.
+        Job string: Modernizing printer.
+    -->
+    <FFF_MakeUpgrade_ModernizedHypermeshPrinter.label>近代化</FFF_MakeUpgrade_ModernizedHypermeshPrinter.label>
+    <FFF_MakeUpgrade_ModernizedHypermeshPrinter.description>近代的な製造機技術と高度なコンポーネントを使用して, 製造機の元の設計を改善する.</FFF_MakeUpgrade_ModernizedHypermeshPrinter.description>
+    <FFF_MakeUpgrade_ModernizedHypermeshPrinter.jobString>製造機を近代化中.</FFF_MakeUpgrade_ModernizedHypermeshPrinter.jobString>
+    <!--
+        Upgrade label: nano-mechanize
+        Description: Alter the printer's original functionality with a nanorestructuring chip, enabling the use of less valuable ingredients at a cost to processing speed.
+        Job string: Installing nanorestructuring chip into printer.
+    -->
+    <FFF_MakeUpgrade_MechaniteHypermeshPrinter.label>ナノメクテック化</FFF_MakeUpgrade_MechaniteHypermeshPrinter.label>
+    <FFF_MakeUpgrade_MechaniteHypermeshPrinter.description>ナノ再構築チップで製造機の元の機能を変更し, 処理速度を犠牲にしてより価値の低い素材の使用を可能にする.</FFF_MakeUpgrade_MechaniteHypermeshPrinter.description>
+    <FFF_MakeUpgrade_MechaniteHypermeshPrinter.jobString>製造機にナノ再構築チップを取り付け中.</FFF_MakeUpgrade_MechaniteHypermeshPrinter.jobString>
+
+</LanguageData>

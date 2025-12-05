@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <!--
+        Job label: print protosuit
+        Description: Automatically print a hypermesh protosuit.
+        Job string: Printing hypermesh protosuit.
+    -->
+    <AutoMake_Protosuit.label>プロトスーツを製造</AutoMake_Protosuit.label>
+    <AutoMake_Protosuit.description>プロトスーツを自動的に製造する.</AutoMake_Protosuit.description>
+    <AutoMake_Protosuit.jobString>プロトスーツの製造サイクルを調整中.</AutoMake_Protosuit.jobString>
+    <!--
+        Job label: print children's protosuit
+        Description: Automatically print a child-sized protosuit.
+        Job string: Printing children's protosuit.
+    -->
+    <AutoMake_ChildProtosuit.label>子供用プロトスーツを製造</AutoMake_ChildProtosuit.label>
+    <AutoMake_ChildProtosuit.description>子供用のサイズに合わせたプロトスーツを自動的に製造する.</AutoMake_ChildProtosuit.description>
+    <AutoMake_ChildProtosuit.jobString>子供用プロトスーツの製造サイクルを調整中.</AutoMake_ChildProtosuit.jobString>
+    <!--
+        Job label: cultivate protosuit
+        Description: Automatically cultivate a hypermesh protosuit from crude materials, as one might gestate a mechanoid.
+        Job string: Cultivating hypermesh protosuit.
+    -->
+    <AutoCultivate_Protosuit.label>プロトスーツを培養</AutoCultivate_Protosuit.label>
+    <AutoCultivate_Protosuit.description>メカノイドの培養プロセスと同様に、シンプルな材料からプロトスーツを自動的に培養する.</AutoCultivate_Protosuit.description>
+    <AutoCultivate_Protosuit.jobString>プロトスーツの培養サイクルを調整中.</AutoCultivate_Protosuit.jobString>
+
+    <AutoCultivate_ChildProtosuit.label>子供用プロトスーツを培養</AutoCultivate_ChildProtosuit.label>
+    <AutoCultivate_ChildProtosuit.description>メカノイドの培養プロセスと同様に、シンプルな材料から子供用プロトスーツを自動的に培養する.</AutoCultivate_ChildProtosuit.description>
+    <AutoCultivate_ChildProtosuit.jobString>子供用プロトスーツの培養サイクルを調整中.</AutoCultivate_ChildProtosuit.jobString>
+
+</LanguageData>

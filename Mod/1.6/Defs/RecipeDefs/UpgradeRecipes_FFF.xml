@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef>
+    <defName>FFF_MakeUpgrade_JuryRiggedHypermeshPrinter</defName>
+    <label>jury-rig</label>
+    <description>Override broken hyperweave restructuring cells and safety controllers to keep the printer running, if only barely.</description>
+    <jobString>Jury-rigging printer.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <workAmount>3600</workAmount>
+    <effectWorking>ConstructMetal</effectWorking>
+    <unfinishedThingDef>FFF_UnfinishedUpgradeStandard</unfinishedThingDef>
+    <descriptionHyperlinks>
+      <ThingDef>FFF_HypermeshPrinterJuryRigged</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+        <thingDefs>
+            <li>ComponentIndustrial</li>
+        </thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+        <li Class="HG.FFF.RecipeTransformableExtension">
+            <thingToBecome>FFF_HypermeshPrinterJuryRigged</thingToBecome>
+            <quality>Awful</quality>
+        </li>
+    </modExtensions>
+    <skillRequirements>
+      <Crafting>2</Crafting>
+    </skillRequirements>
+    <displayPriority>230</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>FFF_MakeUpgrade_RefurbishedHypermeshPrinter</defName>
+    <label>refurbish</label>
+    <description>Restore the printer's original functionality using advanced components.</description>
+    <jobString>Refurbishing printer.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <workAmount>4400</workAmount>
+    <effectWorking>ConstructMetal</effectWorking>
+    <soundWorking>EmpDisabled</soundWorking>
+    <unfinishedThingDef>FFF_UnfinishedUpgradeStandard</unfinishedThingDef>
+    <descriptionHyperlinks>
+      <ThingDef>FFF_HypermeshPrinterRefurbished</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+        <thingDefs>
+            <li>ComponentSpacer</li>
+        </thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+        <li Class="HG.FFF.RecipeTransformableExtension">
+            <thingToBecome>FFF_HypermeshPrinterRefurbished</thingToBecome>
+            <quality>Normal</quality>
+        </li>
+    </modExtensions>
+    <skillRequirements>
+      <Crafting>5</Crafting>
+    </skillRequirements>
+    <displayPriority>230</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>FFF_MakeUpgrade_ModernizedHypermeshPrinter</defName>
+    <label>modernize</label>
+    <description>Improve upon the printer's original design using modern fabricator technology and advanced components.</description>
+    <jobString>Modernizing printer.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <workAmount>6000</workAmount>
+    <effectWorking>ConstructMetal</effectWorking>
+    <soundWorking>EmpDisabled</soundWorking>
+    <unfinishedThingDef>FFF_UnfinishedUpgradeStandard</unfinishedThingDef>
+    <descriptionHyperlinks>
+      <ThingDef>FFF_HypermeshPrinterModernized</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+        <thingDefs>
+            <li>ComponentIndustrial</li>
+            <li>ComponentSpacer</li>
+        </thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+        <li Class="HG.FFF.RecipeTransformableExtension">
+            <thingToBecome>FFF_HypermeshPrinterModernized</thingToBecome>
+            <quality>Excellent</quality>
+        </li>
+    </modExtensions>
+    <skillRequirements>
+      <Crafting>10</Crafting>
+    </skillRequirements>
+    <displayPriority>230</displayPriority>
+  </RecipeDef>
+
+  <RecipeDef MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>FFF_MakeUpgrade_MechaniteHypermeshPrinter</defName>
+    <label>nano-mechanize</label>
+    <description>Alter the printer's original functionality with a nanorestructuring chip, enabling the use of less valuable ingredients at a cost to processing speed.</description>
+    <jobString>Installing nanorestructuring chip into printer.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <workAmount>2000</workAmount>
+    <effectWorking>ConstructMetal</effectWorking>
+    <soundWorking>EmpDisabled</soundWorking>
+    <unfinishedThingDef>FFF_UnfinishedUpgradeMechtech</unfinishedThingDef>
+    <descriptionHyperlinks>
+      <ThingDef>FFF_HypermeshPrinterMechanite</ThingDef>
+    </descriptionHyperlinks>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+        <li>
+        <filter>
+          <thingDefs>
+            <li>NanostructuringChip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+        <thingDefs>
+            <li>ComponentSpacer</li>
+            <li>NanostructuringChip</li>
+        </thingDefs>
+    </fixedIngredientFilter>
+    <modExtensions>
+        <li Class="HG.FFF.RecipeTransformableExtension">
+            <thingToBecome>FFF_HypermeshPrinterMechanite</thingToBecome>
+            <quality>Legendary</quality>
+        </li>
+    </modExtensions>
+    <skillRequirements>
+      <Crafting>10</Crafting>
+    </skillRequirements>
+    <displayPriority>230</displayPriority>
+  </RecipeDef>
+
+</Defs>

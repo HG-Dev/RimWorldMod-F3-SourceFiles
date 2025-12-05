@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+<!--
+    <ThingDef Name="UpgradeBase" Abstract="True">
+        <category>Building</category>
+        //Must be building to have a faction setting
+        <thingClass>HG.FFF.Building_Upgrade</thingClass>
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <tickerType>Rare</tickerType>
+        <altitudeLayer>Blueprint</altitudeLayer>
+        <drawerType>RealtimeOnly</drawerType>
+        <selectable>true</selectable>
+        <designationCategory>Misc</designationCategory>
+        <clearBuildingArea>false</clearBuildingArea>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+        <highlightColor>(1, 1, 1)</highlightColor>
+        <building>
+            <isEdifice>false</isEdifice>
+            <isInert>true</isInert>
+            <neverBuildable>true</neverBuildable>
+            <ai_chillDestination>false</ai_chillDestination>
+            <repairable>false</repairable>
+            <blueprintClass>HG.FFF.Blueprint_Upgrade</blueprintClass>
+        </building>
+    </ThingDef>
+
+    <ThingDef Name="HypermeshPrinterUpgradeBase" ParentName="UpgradeBase" Abstract="True">
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Designations/Flick</texPath>
+            <drawSize>(1,1)</drawSize>
+        </graphicData>
+        <size>(1,2)</size>
+        <rotatable>true</rotatable>
+    </ThingDef>
+
+    <ThingDef ParentName="HypermeshPrinterUpgradeBase">
+        <label>Upgrade: jury-rig</label>
+        <description>A technician with cursory knowledge of microelectronics may be able to bypass dead restructuring cells and safety controllers to keep this printer active, if only just barely.</description>
+        <defName>FFF_HypermeshPrinterUpgradeToJuryRigged</defName>
+        <costList>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <WorkToBuild>100</WorkToBuild>
+        </statBases>
+        <highlightColor>(0.55, 0.76, 0.29)</highlightColor>
+        <constructionSkillPrerequisite>1</constructionSkillPrerequisite>
+        <researchPrerequisites><li>MicroelectronicsBasics</li></researchPrerequisites>
+        <virtualDefParent>FFF_HypermeshPrinterJuryRigged</virtualDefParent>
+    </ThingDef>
+
+    <ThingDef ParentName="HypermeshPrinterUpgradeBase">
+        <label>Upgrade: refurbish</label>
+        <description>With advanced components and knowledge of fabricator construction, a technician may be able to restore this printer to full functionality.</description>
+        <defName>FFF_HypermeshPrinterUpgradeToRefurbished</defName>
+        <costList>
+            <ComponentSpacer>2</ComponentSpacer>
+        </costList>
+        <statBases>
+            <WorkToBuild>4000</WorkToBuild>
+        </statBases>
+        <highlightColor>(0.13, 0.59, 0.95)</highlightColor>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+        <researchPrerequisites><li>Fabrication</li></researchPrerequisites>
+        <virtualDefParent>FFF_HypermeshPrinterRefurbished</virtualDefParent>
+    </ThingDef>
+
+    <ThingDef ParentName="HypermeshPrinterUpgradeBase">
+        <label>Upgrade: modernize</label>
+        <description>A master technician with access to advanced components and modern fabrication technology may be able to improve this printer beyond its original capabilities.</description>
+        <defName>FFF_HypermeshPrinterUpgradeToModernized</defName>
+        <costList>
+            <ComponentSpacer>2</ComponentSpacer>
+            <ComponentIndustrial>4</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <WorkToBuild>8000</WorkToBuild>
+        </statBases>
+        <highlightColor>(0.4, 0.23, 0.72)</highlightColor>
+        <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+        <researchPrerequisites><li>AdvancedFabrication</li></researchPrerequisites>
+        <virtualDefParent>FFF_HypermeshPrinterRefurbished</virtualDefParent>
+    </ThingDef>
+
+    <ThingDef ParentName="HypermeshPrinterUpgradeBase" MayRequire="Ideology">
+        <label>Upgrade: mechtech</label>
+        <description>A master technician may be able to integrate a single nanorestructuring chip into this printer to miraculous effect.</description>
+        <defName>FFF_HypermeshPrinterUpgradeToMechanite</defName>
+        <costList>
+            <NanostructuringChip>1</NanostructuringChip>
+            <ComponentIndustrial>4</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <WorkToBuild>8000</WorkToBuild>
+        </statBases>
+        <highlightColor>(1, 0.6, 0)</highlightColor>
+        <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+        <researchPrerequisites><li>AdvancedFabrication</li></researchPrerequisites>
+        <virtualDefParent>FFF_HypermeshPrinterRefurbished</virtualDefParent>
+    </ThingDef>-->
+</Defs>

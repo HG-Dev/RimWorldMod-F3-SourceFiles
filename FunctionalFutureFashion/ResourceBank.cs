@@ -2,6 +2,8 @@
 using RimWorld;
 using RimWorld.Planet;
 using System.Collections.Generic;
+using System.Linq;
+using JetBrains.Annotations;
 using UnityEngine;
 using Verse;
 // ReSharper disable InconsistentNaming
@@ -12,35 +14,29 @@ namespace HG.FFF
     [StaticConstructorOnStartup]
     internal static class ResourceBank
     {
-        // [DefOf]
-        // public static class PrefabDefOf
-        // {
-        //     public static PrefabDef FFF_FedScoutHideout_SouthwestEntrance;
-        // }
-        //
-        // [DefOf]
-        // public static class WorldObjectDefOf
-        // {
-        //     public static WorldObjectDef FFF_FedScoutWreckSiteWorldObject;
-        // }
-        //
-        // [DefOf]
-        // public static class SitePartDefOf
-        // {
-        //     public static SitePartDef FFF_FedScoutWreckSite;
-        // }
-        
-        [DefOf]
+        [DefOf, PublicAPI]
         public static class ThingDefOf
         {
-            public static ThingDef Limestone;
-            public static ThingDef HypermeshPrinter;
+            public static ThingDef FFF_HypermeshPrinterAnyQuality;
+            public static ThingDef FFF_HypermeshPrinterAncient;
+            public static ThingDef FFF_HypermeshPrinterJuryRigged;
+            public static ThingDef FFF_HypermeshPrinterRefurbished;
+            //public static ThingDef FFF_HypermeshPrinterOptimized;
+            public static ThingDef FFF_HypermeshPrinterModernized;
+            public static ThingDef FFF_HypermeshPrinterMechanite;
             public static ThingDef FFF_PilotSuit;
             public static ThingDef FFF_CrewSuit;
             public static ThingDef FFF_RegalSuit;
             public static ThingDef FFF_SealedProtosuit;
+            public static ThingDef FFF_Hypermesh_Suit;
         }
-
+        
+        public static Lazy<List<ThingDef>> AllHypermeshPrinters = new(() => new List<ThingDef>()
+        {
+            ThingDefOf.FFF_HypermeshPrinterAncient, ThingDefOf.FFF_HypermeshPrinterJuryRigged,
+            ThingDefOf.FFF_HypermeshPrinterRefurbished
+        });
+        
         // [DefOf]
         // public static class TerrainDefOf
         // {
@@ -92,10 +88,10 @@ namespace HG.FFF
             return ThingMaker.MakeThing(best) as Apparel;
         }
 
-        [DefOf]
-        public static class JobDefOf
+        [DefOf, PublicAPI]
+        public static class RecipeDefOf
         {
-            public static JobDef HaulFromUnloadable;
+            public static RecipeDef AutoMake_Protosuit;
         }
 
         private static readonly NameTriple CreatorName = new("Ian", "Hagu", "Haguewood");
@@ -108,13 +104,15 @@ namespace HG.FFF
                 PawnGenerationContext.NonPlayer, location, forceGenerateNewPawn: true, allowDead: false, allowDowned: true,
                 canGeneratePawnRelations: false, mustBeCapableOfViolence: false, 0, forceAddFreeWarmLayerIfNeeded: true, allowGay: true,
                 allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: false, certainlyBeenInCryptosleep: true,
-                forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, biocodeWeaponChance: 1f,
+                worldPawnFactionDoesntMatter: false, biocodeWeaponChance: 1f, 
+                prohibitedTraits: new []{ TraitDefOf.DislikesMen, TraitDefOf.DislikesWomen, TraitDefOf.Nudist, TraitDefOf.BodyPurist, TraitDefOf.Pyromaniac },
                 biologicalAgeRange: new FloatRange(20, 50), forceRecruitable: true);
 
             var creator = !CreatorName.UsedThisGame;
             if (creator)
             {
                 request.AllowGay = false;
+                request.MustBeCapableOfViolence = true;
                 request.FixedGender = Gender.Male;
             }
 

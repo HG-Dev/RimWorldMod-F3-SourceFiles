@@ -11,7 +11,7 @@
         <li>questDescription->[survivor_nameDef]が助けを求めています.[survivor_pronoun]は先日怪我をしていて動けません.\n\n[survivor_nameDef]は[survivor_age]歳の[survivor_title]です.もし[survivor_objective]助けてくれれば,[survivor_pronoun]はあなたに加わると約束しています.\n\nまた,[survivor_nameDef]からの話によると,[allSitePartsDescriptionsExceptFirst][pawnInvolvedInQuestInfo]</li>
         <li>pawnInvolvedInQuestInfo(priority=1)->[survivor_pawnInvolvedInQuestInfo]</li>
         <li>pawnInvolvedInQuestInfo-></li>
-        <li>federationInfo->(*Gray)「連邦」とは、この惑星のようなリムワールドから遠く、人類のもっとも裕福なコロニーを守る勢力である。</li>
+        <li>federationInfo->(*Gray)「連邦」とは, この惑星のようなリムワールドから遠く, 人類のもっとも裕福なコロニーを守る勢力である.</li>
     </FFF_OpportunitySite_FedScoutWreckSurvivor.questDescriptionRules.rulesStrings>
 
     <FFF_OpportunitySite_FedScoutWreckSurvivor.LetterLabelQuestExpired>クエスト期限切れ: [resolvedQuestName]</FFF_OpportunitySite_FedScoutWreckSurvivor.LetterLabelQuestExpired>

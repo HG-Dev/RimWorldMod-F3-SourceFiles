@@ -49,7 +49,7 @@
       <ArmorRating_Heat>0.15</ArmorRating_Heat>
       <MeleeDodgeChance>10</MeleeDodgeChance>
       <EquipDelay>8</EquipDelay>
-      <JumpRange MayRequire="ludeon.rimworld.royalty">5</JumpRange>
+      <JumpRange MayRequire="Ludeon.RimWorld.Royalty">5</JumpRange>
     </statBases>
     <generateAllowChance>0.15</generateAllowChance>
     <apparel>

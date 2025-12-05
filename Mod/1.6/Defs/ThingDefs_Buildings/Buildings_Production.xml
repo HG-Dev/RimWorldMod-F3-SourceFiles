@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-    <ThingDef ParentName="BuildingBase">
-        <defName>HypermeshPrinter</defName>
+    <ThingDef Name="HypermeshPrinterAnyQuality" ParentName="BuildingBase">
         <label>hypermesh printer</label>
-        <description>A standalone device installed on Federation starships to print out hypermesh protosuits. Scavengers will often value the reels of hyperweave stored inside these machines above the machines themselves.\n\nKeeping these units from breaking down quickly becomes a war of attrition, as the megacorp responsible for their manufacture abused a loophole in industrial component standardization laws to boost their afterservice profits.</description>
-        <thingClass>HG.FFF.Building_HypermeshPrinter</thingClass>
+        <defName>FFF_HypermeshPrinterAnyQuality</defName>
+        <description>A standalone device once installed on Federation starships to print out hypermesh protosuits. Its delicate hyperweave restructuring chip is difficult to service, so scavengers generally value their internal stores of hyperweave above the machines themselves. With modern technology, a skilled crafter may be able to refurbish and stabilize the unit.\n\nEven two millenia ago, when these units were introduced, their maintenance quickly became a war of attrition. Seeking early access sales and afterservice profits, the megacorp responsible for their manufacture brought them to market before molecular restructuring technology had fully matured.</description>
+        <thingClass>HG.FFF.Building_ThingMaker</thingClass>
+        <!--<uiIconPath>UI/Building/hp_icon</uiIconPath> TODO: Non-scaled icon for recipes -->
         <thingCategories>
             <li>BuildingsSpecial</li>
         </thingCategories>
@@ -12,6 +13,9 @@
             <texPath>Things/Building/HypermeshPrinter</texPath>
             <graphicClass>HG.FFF.Graphic_Multi_Indexed</graphicClass>
             <drawSize>(1,2)</drawSize>
+            <shadowData>
+                <volume>(1, 0.45, 2)</volume>
+            </shadowData>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
@@ -28,13 +32,11 @@
         <castEdgeShadows>true</castEdgeShadows>
         <fillPercent>0.5</fillPercent>
         <defaultPlacingRot>South</defaultPlacingRot>
+        <interactionCellOffset>(0,0,2)</interactionCellOffset>
+        <hasInteractionCell>true</hasInteractionCell>
         <designationHotKey>Misc4</designationHotKey>
         <minifiedDef>MinifiedThing</minifiedDef>
         <tradeability>Sellable</tradeability>
-        <tradeTags><li>ExoticBuilding</li></tradeTags>
-        <thingSetMakerTags>
-            <li>RewardStandardCore</li>
-         </thingSetMakerTags>
         <statBases>
             <MarketValue>1500</MarketValue>
             <MaxHitPoints>200</MaxHitPoints>
@@ -43,47 +45,269 @@
         </statBases>
         <costList>
             <Uranium>10</Uranium>
-            <Plasteel>50</Plasteel>
-            <Steel>120</Steel>
+            <Plasteel>30</Plasteel>
+            <Steel>100</Steel>
             <ComponentSpacer>2</ComponentSpacer>
         </costList>
+        <virtualDefs>
+            <li>FFF_HypermeshPrinterDefunct</li>
+            <li>FFF_HypermeshPrinterAncient</li>
+            <li>FFF_HypermeshPrinterJuryRigged</li>
+            <li>FFF_HypermeshPrinterRefurbished</li>
+            <li>FFF_HypermeshPrinterModernized</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">FFF_HypermeshPrinterMechanite</li>
+        </virtualDefs>
+        <!--virtualDefParent>FFF_HypermeshPrinterAnyQuality</virtualDefParent-->
         <building>
+            <ai_chillDestination>false</ai_chillDestination>
             <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+            <neverBuildable>true</neverBuildable>
         </building>
         <comps>
-            <li Class="CompProperties_Breakdownable"/>
+            <li Class="CompProperties_Breakdownable"></li>
+            <li Class="CompProperties_Flickable"></li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="HypermeshPrinterAnyQuality">
+        <defName>FFF_HypermeshPrinterDefunct</defName>
+        <label>defunct hypermesh printer</label>
+        <description>An old hypermesh printer that has ceased functioning. Deconstruct it for valuable scrap.</description>
+        <graphicData>
+            <texPath>Things/Building/HypermeshPrinterDead/hp</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(1, 2)</drawSize>
+            <shadowData>
+                <volume>(1, 0.45, 2)</volume>
+            </shadowData>
+        </graphicData>
+        <!--comps> Disabled. Can't make this work without power
+            <li Class="HG.FFF.CompProperties_Transformable">
+                <recipes>
+                    <li>FFF_MakeUpgrade_RefurbishedHypermeshPrinter</li>
+                </recipes>
+            </li>
+        </comps-->
+        <virtualDefs></virtualDefs>
+        <virtualDefParent>FFF_HypermeshPrinterAnyQuality</virtualDefParent>
+    </ThingDef>
+
+    <ThingDef ParentName="HypermeshPrinterAnyQuality">
+        <defName>FFF_HypermeshPrinterAncient</defName>
+        <label>ancient hypermesh printer</label>
+        <comps>
             <li Class="CompProperties_Power">
                 <compClass>CompPowerTrader</compClass>
                 <shortCircuitInRain>true</shortCircuitInRain>
-                <basePowerConsumption>200</basePowerConsumption>
+                <basePowerConsumption>500</basePowerConsumption>
                 <idlePowerDraw>50</idlePowerDraw>
             </li>
-            <li Class="CompProperties_Flickable"/>
-            <li Class="CompProperties_Refuelable">
-                <fuelLabel>Hyperweave</fuelLabel>
-                <fuelGizmoLabel>Hyperweave</fuelGizmoLabel>
-                <outOfFuelMessage>Cannot print: not enough hyperweave</outOfFuelMessage>
-                <fuelFilter>
-                    <thingDefs>
-                        <li>Hyperweave</li>
-                    </thingDefs>
-                </fuelFilter>
-                <fuelCapacity>150</fuelCapacity>
-                <initialFuelPercent>1</initialFuelPercent>
-                <autoRefuelPercent>0.334</autoRefuelPercent>
-                <targetFuelLevelConfigurable>false</targetFuelLevelConfigurable>
-                <showAllowAutoRefuelToggle>false</showAllowAutoRefuelToggle>
-                <showFuelGizmo>true</showFuelGizmo>
-                <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed> 
-                <fuelIconPath>Things\Item\Resource\Hyperweave_c</fuelIconPath>
+            <li Class="HG.FFF.CompProperties_PostPostMakeLoot">
+                <src>AutoMake_Protosuit</src>
             </li>
-            <li Class="HG.FFF.CompProperties_UnloadableSpawner">
-                <thingToSpawn>FFF_Hypermesh_Suit</thingToSpawn>
-                <spawnIntervalRange>10000~960000</spawnIntervalRange>
-                <spawnSlowdownRange>3~20</spawnSlowdownRange>
-                <maxContained>2</maxContained>
-                <soundWorking>ChemfuelFiredGenerator_Ambience</soundWorking>
+            <li Class="HG.FFF.CompProperties_Transformable">
+                <recipes>
+                    <li>FFF_MakeUpgrade_JuryRiggedHypermeshPrinter</li>
+                    <li>FFF_MakeUpgrade_RefurbishedHypermeshPrinter</li>
+                    <li>FFF_MakeUpgrade_ModernizedHypermeshPrinter</li>
+                    <li MayRequire="Ludeon.RimWorld.Biotech">FFF_MakeUpgrade_MechaniteHypermeshPrinter</li>
+                </recipes>
+                <signalPairs>
+                    <li>
+                        <key>EndOfLifetime</key>
+                        <value>FFF_HypermeshPrinterDefunct</value>
+                    </li>
+                </signalPairs>
             </li>
         </comps>
+        <recipes>
+            <li>AutoMake_Protosuit</li>
+            <li>AutoMake_ChildProtosuit</li>
+        </recipes>
+        <tradeTags><li>ExoticBuilding</li></tradeTags>
+        <building>
+            <subcoreScannerFixedIngredients>
+                <li>
+                <filter>
+                    <thingDefs>
+                    <li>Hyperweave</li>
+                    </thingDefs>
+                </filter>
+                <count>75</count>
+                </li>
+                <li>
+                <filter>
+                    <thingDefs>
+                    <li>ComponentIndustrial</li>
+                    </thingDefs>
+                </filter>
+                <count>2</count>
+                </li>
+            </subcoreScannerFixedIngredients>
+            <buildingTags><li>Lootable</li></buildingTags>
+        </building>
+        <skyfaller>
+            <speedCurve>
+                <points>
+                    <li>(0,  1)</li>
+                    <li>(3,  0.5)</li>
+                </points>
+            </speedCurve>
+        </skyfaller>
+        <virtualDefs></virtualDefs>
+        <virtualDefParent>FFF_HypermeshPrinterAnyQuality</virtualDefParent>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+            <li>HG.FFF.ITab_TransformableRecipeChoices</li>
+        </inspectorTabs>
+    </ThingDef>
+
+    <ThingDef ParentName="HypermeshPrinterAnyQuality">
+        <defName>FFF_HypermeshPrinterJuryRigged</defName>
+        <label>jury-rigged hypermesh printer</label>
+        <description>An old hypermesh printer hacked to function in a limited capacity. It runs five times slower than a standard model, and it will only get worse with time.</description>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>500</basePowerConsumption>
+                <idlePowerDraw>50</idlePowerDraw>
+            </li>
+            <li Class="HG.FFF.CompProperties_Transformable">
+                <recipes>
+                    <li>FFF_MakeUpgrade_RefurbishedHypermeshPrinter</li>
+                    <li>FFF_MakeUpgrade_ModernizedHypermeshPrinter</li>
+                </recipes>
+            </li>
+        </comps>
+        <recipes>
+            <li>AutoMake_Protosuit</li>
+            <li>AutoMake_ChildProtosuit</li>
+        </recipes>
+        <skyfaller>
+            <speedCurve>
+                <points>
+                    <li>(0,  0.2)</li>
+                    <li>(19, 0.1)</li>
+                </points>
+            </speedCurve>
+        </skyfaller>
+        <virtualDefs></virtualDefs>
+        <virtualDefParent>FFF_HypermeshPrinterAnyQuality</virtualDefParent>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+            <li>HG.FFF.ITab_TransformableRecipeChoices</li>
+        </inspectorTabs>
+    </ThingDef>
+
+    <ThingDef ParentName="HypermeshPrinterAnyQuality">
+        <defName>FFF_HypermeshPrinterRefurbished</defName>
+        <label>refurbished hypermesh printer</label>
+        <description>This hypermesh printer has been partially retrofit with modern components to keep it running. Its performance will degrade over time.</description>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>500</basePowerConsumption>
+                <idlePowerDraw>50</idlePowerDraw>
+            </li>
+            <li Class="HG.FFF.CompProperties_Transformable">
+                <recipes>
+                    <li>FFF_MakeUpgrade_ModernizedHypermeshPrinter</li>
+                    <li MayRequire="Ludeon.RimWorld.Biotech">FFF_MakeUpgrade_MechaniteHypermeshPrinter</li>
+                </recipes>
+            </li>
+        </comps>
+        <recipes>
+            <li>AutoMake_Protosuit</li>
+            <li>AutoMake_ChildProtosuit</li>
+        </recipes>
+        <skyfaller>
+            <speedCurve>
+                <points>
+                    <li>(0,  1)</li>
+                    <li>(2,  0.9)</li>
+                    <li>(19, 0.5)</li>
+                </points>
+            </speedCurve>
+        </skyfaller>
+        <virtualDefs></virtualDefs>
+        <virtualDefParent>FFF_HypermeshPrinterAnyQuality</virtualDefParent>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+            <li>HG.FFF.ITab_TransformableRecipeChoices</li>
+        </inspectorTabs>
+    </ThingDef>
+
+    <ThingDef ParentName="HypermeshPrinterAnyQuality">
+        <defName>FFF_HypermeshPrinterModernized</defName>
+        <label>modernized hypermesh printer</label>
+        <description>This hypermesh printer has been fully retrofit with modern components, and produces protosuits with maximum efficiency. Its performance will degrade slightly over time.</description>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>500</basePowerConsumption>
+                <idlePowerDraw>50</idlePowerDraw>
+            </li>
+            <li Class="HG.FFF.CompProperties_Transformable" MayRequire="Ludeon.RimWorld.Biotech">
+                <recipes>
+                    <li>FFF_MakeUpgrade_MechaniteHypermeshPrinter</li>
+                </recipes>
+            </li>
+        </comps>
+        <skyfaller>
+            <speedCurve>
+                <points>
+                    <li>(0,  2)</li>
+                    <li>(9,  1.5)</li>
+                    <li>(39, 1)</li>
+                </points>
+            </speedCurve>
+        </skyfaller>
+        <recipes>
+            <li>AutoMake_Protosuit</li>
+            <li>AutoMake_ChildProtosuit</li>
+        </recipes>
+        <virtualDefs></virtualDefs>
+        <virtualDefParent>FFF_HypermeshPrinterAnyQuality</virtualDefParent>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">HG.FFF.ITab_TransformableRecipeChoices</li>
+        </inspectorTabs>
+    </ThingDef>
+
+    <ThingDef ParentName="HypermeshPrinterAnyQuality" MayRequire="Ludeon.RimWorld.Biotech">
+        <defName>FFF_HypermeshPrinterMechanite</defName>
+        <label>advanced hypermesh cultivator</label>
+        <description>A standalone device modified with mechanoid technology to cultivate hypermesh from self-replicating mechanites and cloth instead of hyperweave. Its performance will improve over time as it self-optimizes.</description>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>1000</basePowerConsumption>
+                <idlePowerDraw>50</idlePowerDraw>
+            </li>
+        </comps>
+        <skyfaller>
+            <speedCurve>
+                <points>
+                    <li>(0,  0.5)</li>
+                    <li>(19,  1)</li>
+                    <li>(99, 1.2)</li>
+                </points>
+            </speedCurve>
+        </skyfaller>
+        <recipes>
+            <li>AutoMake_Protosuit</li>
+            <li>AutoMake_ChildProtosuit</li>
+            <li>AutoCultivate_Protosuit</li>
+            <li>AutoCultivate_ChildProtosuit</li>
+        </recipes>
+        <virtualDefs></virtualDefs>
+        <virtualDefParent>FFF_HypermeshPrinterAnyQuality</virtualDefParent>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+        </inspectorTabs>
     </ThingDef>
 </Defs>
