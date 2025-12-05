@@ -21,9 +21,8 @@ namespace HG.FFF
             public static ThingDef FFF_HypermeshPrinterAncient;
             public static ThingDef FFF_HypermeshPrinterJuryRigged;
             public static ThingDef FFF_HypermeshPrinterRefurbished;
-            //public static ThingDef FFF_HypermeshPrinterOptimized;
             public static ThingDef FFF_HypermeshPrinterModernized;
-            public static ThingDef FFF_HypermeshPrinterMechanite;
+            [MayRequireBiotech] public static ThingDef FFF_HypermeshPrinterMechanite;
             public static ThingDef FFF_PilotSuit;
             public static ThingDef FFF_CrewSuit;
             public static ThingDef FFF_RegalSuit;
